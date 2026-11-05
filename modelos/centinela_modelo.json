@@ -1,0 +1,32 @@
+{
+  "modelo": "rf_precio",
+  "features": [
+    "ret_lag1",
+    "ret_lag2",
+    "ret_lag3",
+    "ret_lag6",
+    "var_3m",
+    "media_6m_ratio",
+    "vol_3m",
+    "mes_sin",
+    "mes_cos",
+    "idx_estacional",
+    "g_carnes",
+    "g_frutas",
+    "g_granos y cereales",
+    "g_lacteos y huevos",
+    "g_pescados",
+    "g_procesados",
+    "g_tuberculos, raices y platanos",
+    "g_verduras y hortalizas"
+  ],
+  "entrenado_hasta": "2024-11-01",
+  "n_filas": 10682,
+  "bandas": {
+    "alza": 0.65,
+    "baja": 0.35
+  },
+  "sha256": "c214b8dee7e6c503c3d8aeee9fcb120c7158e8cde50b3e374171588b1ba38279",
+  "paridad_max_abs_vs_sklearn": 1.443908885789824e-07,
+  "tamano_kb": 1089.5
+}

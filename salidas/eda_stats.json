@@ -1,0 +1,563 @@
+{
+  "calidad": {
+    "fechas": {
+      "meses_distintos_lectura_ingenua": 11,
+      "filas_fecha_texto_no_parseada": 49265,
+      "filas_parseadas_como_2026": 107719,
+      "filas_2020_21_con_dia_como_mes": 110244,
+      "meses_distintos_corregidos": 60
+    },
+    "escalados": 154433,
+    "filas_limpias": 271740,
+    "productos": 360,
+    "mercados": 88,
+    "cma_productos": 220,
+    "cma_filas": 12534,
+    "encabezados": 6,
+    "repetidas": 8,
+    "dup_prod": 7
+  },
+  "cobertura": {
+    "productos_completos_60": 181,
+    "total": 220,
+    "min_mes": 201,
+    "max_mes": 215
+  },
+  "precios": {
+    "Papa capira": {
+      "mean": 2062.6,
+      "std": 819.5,
+      "min": 811.0,
+      "50%": 1915.5,
+      "max": 3909.0,
+      "cv_%": 39.7,
+      "var_total_%": 106.4
+    },
+    "Papa criolla": {
+      "mean": 2677.0,
+      "std": 949.3,
+      "min": 1033.0,
+      "50%": 2525.5,
+      "max": 5260.0,
+      "cv_%": 35.5,
+      "var_total_%": 93.2
+    },
+    "Tomate chonto": {
+      "mean": 2538.2,
+      "std": 798.7,
+      "min": 1271.0,
+      "50%": 2314.5,
+      "max": 4471.0,
+      "cv_%": 31.5,
+      "var_total_%": 51.3
+    },
+    "Cebolla junca": {
+      "mean": 2247.6,
+      "std": 557.8,
+      "min": 1377.0,
+      "50%": 2184.5,
+      "max": 4072.0,
+      "cv_%": 24.8,
+      "var_total_%": 50.1
+    }
+  },
+  "indice_mercado_fin": 162.5,
+  "estacionalidad": {
+    "Papa capira": {
+      "mes_mas_caro": "Mar",
+      "indice_max": 1.19,
+      "mes_mas_barato": "Sep",
+      "indice_min": 0.81
+    },
+    "Papa criolla": {
+      "mes_mas_caro": "Abr",
+      "indice_max": 1.29,
+      "mes_mas_barato": "Ene",
+      "indice_min": 0.79
+    },
+    "Tomate chonto": {
+      "mes_mas_caro": "Dic",
+      "indice_max": 1.27,
+      "mes_mas_barato": "Jul",
+      "indice_min": 0.75
+    },
+    "Cebolla junca": {
+      "mes_mas_caro": "Dic",
+      "indice_max": 1.21,
+      "mes_mas_barato": "May",
+      "indice_min": 0.85
+    }
+  },
+  "fuerza_stl": {
+    "Papa capira": {
+      "estacional": 0.62,
+      "tendencia": 0.77
+    },
+    "Papa criolla": {
+      "estacional": 0.57,
+      "tendencia": 0.75
+    },
+    "Tomate chonto": {
+      "estacional": 0.17,
+      "tendencia": 0.32
+    },
+    "Cebolla junca": {
+      "estacional": 0.33,
+      "tendencia": 0.52
+    }
+  },
+  "variaciones": {
+    "Papa capira": {
+      "sube_%": 49.2,
+      "desv_mensual_%": 19.7,
+      "p5_%": -21.4,
+      "p95_%": 38.6,
+      "estable_5%": 25.4
+    },
+    "Papa criolla": {
+      "sube_%": 50.8,
+      "desv_mensual_%": 20.4,
+      "p5_%": -34.9,
+      "p95_%": 34.8,
+      "estable_5%": 23.7
+    },
+    "Tomate chonto": {
+      "sube_%": 54.2,
+      "desv_mensual_%": 23.8,
+      "p5_%": -36.7,
+      "p95_%": 40.0,
+      "estable_5%": 15.3
+    },
+    "Cebolla junca": {
+      "sube_%": 52.5,
+      "desv_mensual_%": 14.8,
+      "p5_%": -20.0,
+      "p95_%": 19.9,
+      "estable_5%": 15.3
+    }
+  },
+  "acf": {
+    "Papa capira": {
+      "rezago1": 0.32,
+      "rezago12": 0.12,
+      "rezagos_significativos": [
+        1,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11
+      ]
+    },
+    "Papa criolla": {
+      "rezago1": 0.29,
+      "rezago12": 0.14,
+      "rezagos_significativos": [
+        1,
+        3
+      ]
+    },
+    "Tomate chonto": {
+      "rezago1": -0.12,
+      "rezago12": -0.08,
+      "rezagos_significativos": []
+    },
+    "Cebolla junca": {
+      "rezago1": -0.02,
+      "rezago12": 0.12,
+      "rezagos_significativos": [
+        3
+      ]
+    }
+  },
+  "clima": {
+    "norte": {
+      "lluvia_anual_mm": 1613,
+      "temp_media": 13.2,
+      "municipio": "Santa Rosa de Osos"
+    },
+    "occidente": {
+      "lluvia_anual_mm": 1583,
+      "temp_media": 24.7,
+      "municipio": "San Jerónimo"
+    },
+    "oriente": {
+      "lluvia_anual_mm": 2334,
+      "temp_media": 16.9,
+      "municipio": "El Peñol"
+    }
+  },
+  "trm": {
+    "min": 3311,
+    "max": 4927,
+    "mes_max": "2022-11"
+  },
+  "produccion": {
+    "Papa": {
+      "top": {
+        "norte": 55.1,
+        "oriente": 40.4,
+        "valle de aburra": 4.2,
+        "suroeste": 0.2,
+        "occidente": 0.0
+      },
+      "vol_2024_t": 226518,
+      "vol_2019_t": 209083,
+      "area_2024_ha": 8338
+    },
+    "Papa criolla": {
+      "top": {
+        "oriente": 68.2,
+        "norte": 31.0,
+        "suroeste": 0.5,
+        "valle de aburra": 0.3,
+        "occidente": 0.0
+      },
+      "vol_2024_t": 24052,
+      "vol_2019_t": 19665,
+      "area_2024_ha": 1638
+    },
+    "Tomate chonto": {
+      "top": {
+        "suroeste": 43.2,
+        "oriente": 38.5,
+        "valle de aburra": 9.1,
+        "occidente": 4.4,
+        "norte": 4.1
+      },
+      "vol_2024_t": 21963,
+      "vol_2019_t": 24663,
+      "area_2024_ha": 504
+    },
+    "Cebolla junca": {
+      "top": {
+        "occidente": 46.1,
+        "valle de aburra": 32.8,
+        "oriente": 17.5,
+        "norte": 2.0,
+        "suroeste": 1.6
+      },
+      "vol_2024_t": 17080,
+      "vol_2019_t": 23860,
+      "area_2024_ha": 807
+    }
+  },
+  "correlaciones": {
+    "top": [
+      [
+        "Lluvia (t-3) / Papa criolla",
+        0.54,
+        0.0
+      ],
+      [
+        "Δ precio (t-0) / Papa capira",
+        0.5,
+        0.0
+      ],
+      [
+        "Lluvia (t-0) / Papa criolla",
+        -0.4,
+        0.003
+      ],
+      [
+        "Lluvia acum. 3m / Cebolla junca",
+        0.35,
+        0.009
+      ],
+      [
+        "Lluvia (t-0) / Cebolla junca",
+        0.32,
+        0.015
+      ],
+      [
+        "Temp. media / Cebolla junca",
+        -0.32,
+        0.016
+      ],
+      [
+        "Δ precio (t-2) / Papa criolla",
+        -0.31,
+        0.018
+      ],
+      [
+        "Lluvia (t-2) / Papa criolla",
+        0.31,
+        0.019
+      ]
+    ],
+    "n_significativas": 11,
+    "n_total": 56,
+    "esperadas_por_azar": 2.8
+  },
+  "sondeo": {
+    "todo": [
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Base: clase mayoritaria",
+        "n": 92,
+        "accuracy_%": 46.7,
+        "ic95_bajo": 36.9,
+        "ic95_alto": 56.9
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Base: repite última dirección",
+        "n": 92,
+        "accuracy_%": 57.6,
+        "ic95_bajo": 47.4,
+        "ic95_alto": 67.2
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Regresión logística",
+        "n": 92,
+        "accuracy_%": 55.4,
+        "ic95_bajo": 45.3,
+        "ic95_alto": 65.2
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Random Forest",
+        "n": 92,
+        "accuracy_%": 62.0,
+        "ic95_bajo": 51.7,
+        "ic95_alto": 71.2
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Base: clase mayoritaria",
+        "n": 92,
+        "accuracy_%": 46.7,
+        "ic95_bajo": 36.9,
+        "ic95_alto": 56.9
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Base: repite última dirección",
+        "n": 92,
+        "accuracy_%": 57.6,
+        "ic95_bajo": 47.4,
+        "ic95_alto": 67.2
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Regresión logística",
+        "n": 92,
+        "accuracy_%": 59.8,
+        "ic95_bajo": 49.6,
+        "ic95_alto": 69.2
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Random Forest",
+        "n": 92,
+        "accuracy_%": 54.3,
+        "ic95_bajo": 44.2,
+        "ic95_alto": 64.1
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Base: clase mayoritaria",
+        "n": 92,
+        "accuracy_%": 46.7,
+        "ic95_bajo": 36.9,
+        "ic95_alto": 56.9
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Base: repite última dirección",
+        "n": 92,
+        "accuracy_%": 57.6,
+        "ic95_bajo": 47.4,
+        "ic95_alto": 67.2
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Regresión logística",
+        "n": 92,
+        "accuracy_%": 50.0,
+        "ic95_bajo": 40.0,
+        "ic95_alto": 60.0
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Random Forest",
+        "n": 92,
+        "accuracy_%": 55.4,
+        "ic95_bajo": 45.3,
+        "ic95_alto": 65.2
+      }
+    ],
+    "solo2024": [
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Base: clase mayoritaria",
+        "n": 48,
+        "accuracy_%": 50.0,
+        "ic95_bajo": 36.4,
+        "ic95_alto": 63.6
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Base: repite última dirección",
+        "n": 48,
+        "accuracy_%": 54.2,
+        "ic95_bajo": 40.3,
+        "ic95_alto": 67.4
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Regresión logística",
+        "n": 48,
+        "accuracy_%": 54.2,
+        "ic95_bajo": 40.3,
+        "ic95_alto": 67.4
+      },
+      {
+        "escenario": "A. 4 productos · precio+TRM",
+        "metodo": "Random Forest",
+        "n": 48,
+        "accuracy_%": 62.5,
+        "ic95_bajo": 48.4,
+        "ic95_alto": 74.8
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Base: clase mayoritaria",
+        "n": 48,
+        "accuracy_%": 50.0,
+        "ic95_bajo": 36.4,
+        "ic95_alto": 63.6
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Base: repite última dirección",
+        "n": 48,
+        "accuracy_%": 54.2,
+        "ic95_bajo": 40.3,
+        "ic95_alto": 67.4
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Regresión logística",
+        "n": 48,
+        "accuracy_%": 62.5,
+        "ic95_bajo": 48.4,
+        "ic95_alto": 74.8
+      },
+      {
+        "escenario": "B. Todos los productos CMA · precio+TRM",
+        "metodo": "Random Forest",
+        "n": 48,
+        "accuracy_%": 52.1,
+        "ic95_bajo": 38.3,
+        "ic95_alto": 65.5
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Base: clase mayoritaria",
+        "n": 48,
+        "accuracy_%": 50.0,
+        "ic95_bajo": 36.4,
+        "ic95_alto": 63.6
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Base: repite última dirección",
+        "n": 48,
+        "accuracy_%": 54.2,
+        "ic95_bajo": 40.3,
+        "ic95_alto": 67.4
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Regresión logística",
+        "n": 48,
+        "accuracy_%": 50.0,
+        "ic95_bajo": 36.4,
+        "ic95_alto": 63.6
+      },
+      {
+        "escenario": "C. 4 productos · +clima+producción",
+        "metodo": "Random Forest",
+        "n": 48,
+        "accuracy_%": 56.2,
+        "ic95_bajo": 42.3,
+        "ic95_alto": 69.3
+      }
+    ],
+    "regresion": {
+      "A. 4 productos · precio+TRM": {
+        "mae_rf_pp": 16.01,
+        "mae_naive_pp": 15.9,
+        "dir_reg_%": 57.61
+      },
+      "B. Todos los productos CMA · precio+TRM": {
+        "mae_rf_pp": 15.95,
+        "mae_naive_pp": 15.9,
+        "dir_reg_%": 50.0
+      },
+      "C. 4 productos · +clima+producción": {
+        "mae_rf_pp": 15.97,
+        "mae_naive_pp": 15.9,
+        "dir_reg_%": 56.52
+      }
+    },
+    "regresion_2024": {
+      "A. 4 productos · precio+TRM": {
+        "mae_rf_pp": 14.25,
+        "mae_naive_pp": 14.62,
+        "dir_reg_%": 62.5
+      },
+      "B. Todos los productos CMA · precio+TRM": {
+        "mae_rf_pp": 14.2,
+        "mae_naive_pp": 14.62,
+        "dir_reg_%": 50.0
+      },
+      "C. 4 productos · +clima+producción": {
+        "mae_rf_pp": 14.42,
+        "mae_naive_pp": 14.62,
+        "dir_reg_%": 58.33
+      }
+    },
+    "n_productos_big": 181,
+    "clase_alza_pct": 46.7
+  },
+  "importancia_top": {
+    "ret2": 0.113,
+    "ma12": 0.112,
+    "ret0": 0.092,
+    "ret1": 0.073,
+    "ma3": 0.07,
+    "lluvia_t3": 0.065
+  },
+  "periodo": {
+    "inicio": "2020-01",
+    "fin": "2024-12",
+    "meses": 60
+  },
+  "maestra_filas": 240,
+  "pesos_clima": {
+    "cebolla junca": {
+      "norte": 0.028,
+      "occidente": 0.745,
+      "oriente": 0.226
+    },
+    "papa": {
+      "norte": 0.541,
+      "occidente": 0.001,
+      "oriente": 0.458
+    },
+    "papa criolla": {
+      "norte": 0.234,
+      "occidente": 0.0,
+      "oriente": 0.766
+    },
+    "tomate chonto": {
+      "norte": 0.073,
+      "occidente": 0.088,
+      "oriente": 0.839
+    }
+  }
+}

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centinela Agro · Pipeline con agentes de IA</title>
+<style>
+:root{--verde:#1F6E5C;--azul:#1F3A5F;--gris:#f3f6f5;--linea:#d6dfdc;--texto:#1d2b27;
+--ia:#6b4fbb;--ia-bg:#f1edfb;--hu:#b9731c;--hu-bg:#fdf3e4;--hecho:#1F6E5C;--parcial:#c28a12;--prop:#7a8a86}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.55}
+.envuelve{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+h1{color:var(--azul);margin:0 0 4px;font-size:1.7em}
+.lead{margin:0 0 18px;color:#44544f;max-width:860px}
+.aviso{background:var(--hu-bg);border-left:5px solid var(--hu);padding:10px 14px;border-radius:4px;margin:0 0 20px;font-size:.93em}
+.sr{position:absolute;opacity:0;pointer-events:none}
+.controles{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 18px;padding:10px 14px;background:var(--gris);border:1px solid var(--linea);border-radius:8px}
+.controles label.sw{cursor:pointer;user-select:none;font-size:.92em;display:inline-flex;gap:8px;align-items:center}
+.controles label.sw::before{content:"";width:34px;height:18px;border-radius:9px;background:#b8c4c0;transition:.2s;box-shadow:inset 0 0 0 2px #fff}
+#ag:checked ~ .controles label[for=ag]::before{background:var(--ia)}
+#hu:checked ~ .controles label[for=hu]::before{background:var(--hu)}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.82em;margin-left:auto}
+.leyenda i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.flujo{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 34px;margin:0 0 14px}
+.nodo{position:relative;display:flex;flex-direction:column;gap:5px;padding:14px 14px 12px;background:#fff;border:2px solid var(--linea);border-radius:12px;cursor:pointer;transition:.18s}
+.nodo:hover{border-color:var(--azul);transform:translateY(-3px);box-shadow:0 6px 16px rgba(31,58,95,.12)}
+.num{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--azul);color:#fff;font-weight:700;align-items:center;justify-content:center;font-size:.9em}
+.num.grande{width:44px;height:44px;font-size:1.3em;flex:none}
+.nombre{font-weight:700;color:var(--azul);font-size:1.02em}
+.capa{font-size:.8em;color:#5a6b66}
+.estado,.tag{align-self:flex-start;font-size:.72em;font-weight:700;padding:2px 8px;border-radius:10px;color:#fff;letter-spacing:.02em}
+.est-hecho .estado,.tag.est-hecho{background:var(--hecho)}
+.est-parcial .estado,.tag.est-parcial{background:var(--parcial)}
+.est-propuesto .estado,.tag.est-propuesto{background:var(--prop)}
+.nodo.est-hecho{border-left:6px solid var(--hecho)}
+.nodo.est-parcial{border-left:6px solid var(--parcial)}
+.nodo.est-propuesto{border-left:6px dashed var(--prop)}
+.chip{align-self:flex-start;font-size:.74em;padding:3px 9px;border-radius:12px;font-weight:600}
+.chip.agente{background:var(--ia-bg);color:var(--ia);border:1px solid #d6cdf2}
+.chip.humano{background:var(--hu-bg);color:var(--hu);border:1px solid #f0d9b3}
+.flecha{position:absolute;top:50%;right:-31px;width:28px;height:4px;margin-top:-2px;background:repeating-linear-gradient(90deg,var(--verde) 0 6px,transparent 6px 10px);background-size:20px 4px;animation:fluye .9s linear infinite}
+.flecha::after{content:"";position:absolute;right:-3px;top:-4px;border:6px solid transparent;border-left:9px solid var(--verde)}
+@keyframes fluye{to{background-position:20px 0}}
+.sigue{font-size:.72em;color:#5a6b66;font-style:italic}
+#ag:not(:checked) ~ .flujo .chip.agente,#ag:not(:checked) ~ .paneles .agente-box,#ag:not(:checked) ~ .tabla-agentes{display:none}
+#hu:not(:checked) ~ .flujo .chip.humano,#hu:not(:checked) ~ .paneles .caja.humano{display:none}
+.orq{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:11px 16px;background:var(--azul);color:#fff;border-radius:10px;margin:0 0 6px;font-size:.9em}
+.orq b{color:#fff}
+.orq .bucle{margin-left:auto;background:rgba(255,255,255,.14);padding:3px 11px;border-radius:12px;font-size:.88em}
+.pista{margin:8px 2px 18px;font-size:.88em;color:#5a6b66}
+.paneles{min-height:120px}
+.panel{display:none;border:2px solid var(--verde);border-radius:14px;padding:20px 22px;background:#fff;animation:entra .25s ease}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel>header{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.panel h3{margin:0;color:var(--azul);font-size:1.3em}
+.sub{margin:2px 0 0;color:#5a6b66;font-size:.9em}
+.caja{background:var(--gris);border:1px solid var(--linea);border-radius:9px;padding:11px 14px}
+.caja h4{margin:0 0 6px;font-size:.78em;text-transform:uppercase;letter-spacing:.06em;color:var(--verde)}
+.caja p{margin:0 0 6px;font-size:.92em}
+.caja ul{margin:0 0 8px;padding-left:18px;font-size:.92em}
+.caja li{margin-bottom:4px}
+.mini{font-size:.84em!important;color:#44544f}
+.io{display:grid;grid-template-columns:1fr 46px 1fr;align-items:center;gap:8px;margin-bottom:12px}
+.io-flecha{height:4px;background:repeating-linear-gradient(90deg,var(--verde) 0 6px,transparent 6px 10px);background-size:20px 4px;position:relative;animation:fluye .9s linear infinite}
+.io-flecha::after{content:"";position:absolute;right:-3px;top:-6px;border:8px solid transparent;border-left:11px solid var(--verde)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.cols.tres{grid-template-columns:repeat(3,1fr);margin-bottom:0}
+.agente-box{background:var(--ia-bg);border-color:#d6cdf2}
+.agente-box h4{color:var(--ia)}
+.nivel{display:inline-block;padding:2px 9px;border-radius:10px;font-size:.8em!important;color:#fff;background:var(--ia)}
+.agente-box.aut-s .nivel{background:#8a6fd1}.agente-box.aut-a .nivel{background:var(--ia)}.agente-box.aut-x .nivel{background:#3f2d85}
+.caja.humano{background:var(--hu-bg);border-color:#f0d9b3;margin-bottom:12px}
+.caja.humano h4{color:var(--hu)}
+h2{color:var(--verde);border-left:6px solid var(--verde);padding-left:12px;margin:34px 0 12px;font-size:1.25em}
+table{border-collapse:collapse;width:100%;font-size:.88em}
+th{background:var(--azul);color:#fff;text-align:left;padding:8px 10px}
+td{padding:8px 10px;border-bottom:1px solid var(--linea);vertical-align:top}
+tr:nth-child(even) td{background:var(--gris)}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:.82em;font-weight:600}
+.pill.s{background:#8a6fd1}.pill.a{background:var(--ia)}.pill.x{background:#3f2d85}
+.guard{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.guard div{background:var(--gris);border:1px solid var(--linea);border-top:4px solid var(--verde);border-radius:8px;padding:10px 12px;font-size:.88em}
+.guard b{display:block;color:var(--azul);margin-bottom:4px}
+code{background:#e8eeec;padding:1px 5px;border-radius:3px;font-size:.92em}
+@media (max-width:980px){.flujo{grid-template-columns:repeat(2,1fr)}.guard{grid-template-columns:1fr 1fr}.cols,.cols.tres{grid-template-columns:1fr}.sigue{display:none}}
+@media (max-width:640px){.flujo{grid-template-columns:1fr;gap:34px}.flecha{top:auto;bottom:-31px;right:50%;margin:0 -14px 0 0;transform:rotate(90deg)}.io{grid-template-columns:1fr}.io-flecha{display:none}.guard{grid-template-columns:1fr}}
+
+#n1:checked ~ .flujo label[for=n1],#n1:focus-visible ~ .flujo label[for=n1]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n1:checked ~ .paneles #p1{display:block}
+#n2:checked ~ .flujo label[for=n2],#n2:focus-visible ~ .flujo label[for=n2]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n2:checked ~ .paneles #p2{display:block}
+#n3:checked ~ .flujo label[for=n3],#n3:focus-visible ~ .flujo label[for=n3]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n3:checked ~ .paneles #p3{display:block}
+#n4:checked ~ .flujo label[for=n4],#n4:focus-visible ~ .flujo label[for=n4]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n4:checked ~ .paneles #p4{display:block}
+#n5:checked ~ .flujo label[for=n5],#n5:focus-visible ~ .flujo label[for=n5]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n5:checked ~ .paneles #p5{display:block}
+#n6:checked ~ .flujo label[for=n6],#n6:focus-visible ~ .flujo label[for=n6]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n6:checked ~ .paneles #p6{display:block}
+#n7:checked ~ .flujo label[for=n7],#n7:focus-visible ~ .flujo label[for=n7]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n7:checked ~ .paneles #p7{display:block}
+#n8:checked ~ .flujo label[for=n8],#n8:focus-visible ~ .flujo label[for=n8]{border-color:var(--verde);box-shadow:0 0 0 3px rgba(31,110,92,.25);transform:translateY(-3px)}
+#n8:checked ~ .paneles #p8{display:block}</style></head>
+<body><div class="envuelve">
+<h1>Centinela Agro · Pipeline de producción con agentes de IA</h1>
+<p class="lead">De los datos crudos a la alerta mensual: 8 etapas, 8 puntos donde un agente de IA ayuda y 5 donde una persona decide.
+Haz clic en cada etapa para ver qué entra, qué sale, qué hace el código, qué hace el agente y dónde está su límite.</p>
+<div class="aviso"><b>Las etapas 2 a 6 ya existen como código</b> (<code>etl.py</code>, <code>ml_features.py</code>, <code>ml_modelo.py</code>, <code>ml_confiabilidad.py</code>, <code>ml_onnx.py</code>) y la 7 está parcial (ONNX + tablero).
+Los agentes siguen siendo una propuesta. El modelo cumple O3 en el grupo de 181 productos; en los 4 del alcance no es demostrable: ver la compuerta de la etapa 6.</div>
+
+<input class="sr" type="checkbox" id="ag" checked aria-label="Mostrar agentes de IA">
+<input class="sr" type="checkbox" id="hu" checked aria-label="Mostrar puntos de control humanos">
+<input class="sr" type="radio" name="etapa" id="n1" checked aria-label="Etapa 1"><input class="sr" type="radio" name="etapa" id="n2" aria-label="Etapa 2"><input class="sr" type="radio" name="etapa" id="n3" aria-label="Etapa 3"><input class="sr" type="radio" name="etapa" id="n4" aria-label="Etapa 4"><input class="sr" type="radio" name="etapa" id="n5" aria-label="Etapa 5"><input class="sr" type="radio" name="etapa" id="n6" aria-label="Etapa 6"><input class="sr" type="radio" name="etapa" id="n7" aria-label="Etapa 7"><input class="sr" type="radio" name="etapa" id="n8" aria-label="Etapa 8">
+<div class="controles">
+  <label class="sw" for="ag">Agentes de IA</label>
+  <label class="sw" for="hu">Puntos de control humanos</label>
+  <div class="leyenda">
+    <span><i style="background:var(--hecho)"></i>Hecho</span>
+    <span><i style="background:var(--parcial)"></i>Parcial</span>
+    <span><i style="background:var(--prop)"></i>Propuesto</span>
+    <span><i style="background:var(--ia)"></i>Agente IA</span>
+    <span><i style="background:var(--hu)"></i>Persona</span>
+  </div>
+</div>
+<nav class="flujo" aria-label="Etapas del pipeline"><label for="n1" class="nodo est-parcial"><span class="num">1</span><span class="nombre">Captura de fuentes</span><span class="capa">Bronze (crudo)</span><span class="estado">Parcial</span><span class="chip agente aut-x" title="Autónomo acotado">IA · Agente de Ingesta</span><span class="flecha" aria-hidden="true"></span></label><label for="n2" class="nodo est-hecho"><span class="num">2</span><span class="nombre">Limpieza y calidad</span><span class="capa">Silver (limpio)</span><span class="estado">Hecho</span><span class="chip agente aut-s" title="Sugiere">IA · Agente de Calidad y Anomalías</span><span class="chip humano">Persona aprueba</span><span class="flecha" aria-hidden="true"></span></label><label for="n3" class="nodo est-hecho"><span class="num">3</span><span class="nombre">Maestra y variables</span><span class="capa">Gold (analítico)</span><span class="estado">Hecho</span><span class="chip agente aut-a" title="Ejecuta con aprobación">IA · Agente de Variables</span><span class="chip humano">Persona aprueba</span><span class="flecha" aria-hidden="true"></span></label><label for="n4" class="nodo est-hecho"><span class="num">4</span><span class="nombre">EDA automático</span><span class="capa">Reporte</span><span class="estado">Hecho</span><span class="chip agente aut-x" title="Autónomo acotado">IA · Agente de Reporte</span><span class="sigue" aria-hidden="true">continúa abajo ↓</span></label><label for="n5" class="nodo est-hecho"><span class="num">5</span><span class="nombre">Modelado y experimentos</span><span class="capa">ML</span><span class="estado">Hecho</span><span class="chip agente aut-x" title="Autónomo acotado">IA · Agente Experimentador</span><span class="flecha" aria-hidden="true"></span></label><label for="n6" class="nodo est-hecho"><span class="num">6</span><span class="nombre">Evaluación y compuerta</span><span class="capa">ML</span><span class="estado">Hecho</span><span class="chip agente aut-s" title="Sugiere">IA · Agente Revisor Estadístico</span><span class="chip humano">Persona aprueba</span><span class="flecha" aria-hidden="true"></span></label><label for="n7" class="nodo est-parcial"><span class="num">7</span><span class="nombre">Servicio y alertas</span><span class="capa">Producción</span><span class="estado">Parcial</span><span class="chip agente aut-a" title="Ejecuta con aprobación">IA · Agente Narrador</span><span class="chip humano">Persona aprueba</span><span class="flecha" aria-hidden="true"></span></label><label for="n8" class="nodo est-propuesto"><span class="num">8</span><span class="nombre">Monitoreo y reentrenamiento</span><span class="capa">Operación</span><span class="estado">Propuesto</span><span class="chip agente aut-a" title="Ejecuta con aprobación">IA · Agente Monitor</span><span class="chip humano">Persona aprueba</span></label></nav>
+<div class="orq"><b>Orquestador</b> Dagster o Prefect · corrida mensual programada · cada etapa es una tarea con reintentos y registro
+<span class="bucle">Ciclo: 8 Monitoreo → vuelve a 2 Limpieza y a 5 Modelado</span></div>
+<p class="pista">Las etapas son selectores: con el teclado, usa las flechas ← → sobre el selector de etapa.</p>
+<div class="paneles">
+<section class="panel" id="p1">
+  <header>
+    <span class="num grande">1</span>
+    <div><h3>Captura de fuentes</h3><p class="sub">Bronze (crudo) · <span class="tag est-parcial">Parcial</span> · Esfuerzo estimado: 3 días</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>SIPSA (Excel/DANE), Open-Meteo (API), TRM (datos.gov.co), producción UPRA / Datos Colombia</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>data/raw/AAAA-MM/*.parquet + manifiesto (hash, filas, fecha de descarga)</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>Hoy se lee el Excel manual (`precios_sipsa_modificado.xlsx`). A producción: descarga programada de cada fuente.</li><li>Los datos crudos son de solo lectura y se versionan por mes: nunca se sobrescriben.</li><li>Cada descarga guarda un manifiesto: hash del archivo, número de filas y columnas.</li></ul><p class="mini"><b>Herramientas:</b> requests, pandas, Parquet, DuckDB</p></div>
+    <div class="caja agente-box aut-x">
+      <h4>Agente de IA · Agente de Ingesta</h4>
+      <p class="nivel">Autonomía: <b>Autónomo acotado</b></p>
+      <p><b>Qué hace.</b> Vigila las fuentes, detecta un informe nuevo o un cambio de esquema (columna renombrada, hoja nueva), descarga y valida el manifiesto.</p>
+      <p><b>Límite.</b> Solo escribe en `raw/`. No toca datos limpios. Si el esquema cambia, detiene la corrida y avisa; no intenta adivinar.</p>
+    </div>
+  </div>
+  
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Manifiesto completo y esquema igual al contrato; si no, la corrida se detiene.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Una tarea por fuente y por mes, en paralelo. Particionado por AAAA-MM. Reintentos con espera.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Medio: SIPSA no tiene API estable; puede requerir scraping o carga manual asistida.</p></div>
+  </div>
+</section>
+<section class="panel" id="p2">
+  <header>
+    <span class="num grande">2</span>
+    <div><h3>Limpieza y calidad</h3><p class="sub">Silver (limpio) · <span class="tag est-hecho">Hecho</span> · Esfuerzo estimado: 4 días (el ETL ya existe)</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>raw/ del mes</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>datos_limpios/sipsa_limpio, clima_mensual, trm_mensual, produccion_limpia + salidas/etl_log.json</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>`arreglar_fecha`: corrige día-como-mes (2020-21), texto `ene-22` y año 2026 (11 → 60 meses).</li><li>`arreglar_escala`: reescala ×1000 por distancia logarítmica a la mediana 2020-21 (154.433 filas).</li><li>Deduplica, quita encabezados, convierte negativos a nulo. Todo queda en `etl_log.json`.</li></ul><p class="mini"><b>Herramientas:</b> pandas, pandera / Great Expectations</p></div>
+    <div class="caja agente-box aut-s">
+      <h4>Agente de IA · Agente de Calidad y Anomalías</h4>
+      <p class="nivel">Autonomía: <b>Sugiere</b></p>
+      <p><b>Qué hace.</b> Perfila cada carga contra la línea base (meses distintos, mediana anual por producto, saltos de ×1000, productos nuevos). Si aparece un defecto nuevo, redacta una regla de corrección propuesta con evidencia (ejemplos y gráfico). También unifica nombres de producto y mercado con LLM + embeddings.</p>
+      <p><b>Límite.</b> Nunca modifica `src/etl.py` ni los datos por su cuenta: entrega una propuesta. Las reglas nuevas pasan por revisión humana.</p>
+    </div>
+  </div>
+  <div class="caja humano"><h4>Punto de control humano</h4><p>Aprobar cada regla nueva de limpieza antes de que entre al ETL.</p></div>
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Meses = 60 esperados, 0 filas en 2026, mediana anual continua entre 2021 y 2022. Si falla, la carga no avanza.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Particionado por mercado y producto. Validación declarativa que corre en segundos sobre 271.740 filas y escala a decenas de millones con DuckDB.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Bajo en el código; medio en la resolución de nombres (falsos emparejamientos).</p></div>
+  </div>
+</section>
+<section class="panel" id="p3">
+  <header>
+    <span class="num grande">3</span>
+    <div><h3>Maestra y variables</h3><p class="sub">Gold (analítico) · <span class="tag est-hecho">Hecho</span> · Esfuerzo estimado: Hecho; falta la prueba automática de fuga por desplazamiento (1 día)</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>datos_limpios/*</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>datos_limpios/maestra_mensual (240 filas) + datos_limpios/features_grupo.csv (10.863 filas, 181 productos × 60 meses)</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>`src/etl.py` une precio + clima ponderado por producción + TRM + producción t-1 (maestra de los 4 productos).</li><li>`src/ml_features.py` arma las variables de los 181 productos: rezagos de retorno, media móvil, volatilidad, seno/coseno del mes, índice estacional con solo pasado y grupo.</li><li>Regla de validez: toda columna del mes t usa solo información al cierre de t. El ETL falla si los meses ≠ 60.</li></ul><p class="mini"><b>Herramientas:</b> pandas / DuckDB, Parquet</p></div>
+    <div class="caja agente-box aut-a">
+      <h4>Agente de IA · Agente de Variables</h4>
+      <p class="nivel">Autonomía: <b>Ejecuta con aprobación</b></p>
+      <p><b>Qué hace.</b> Propone variables candidatas, las construye en un entorno aislado, pasa la prueba de fuga y mide su ganancia con walk-forward. Descarta las que no aportan.</p>
+      <p><b>Límite.</b> Trabaja en rama separada. Solo se fusiona una variable con aprobación y con ganancia demostrada (IC95), para no inflar el modelo.</p>
+    </div>
+  </div>
+  <div class="caja humano"><h4>Punto de control humano</h4><p>Aprobar la fusión de variables nuevas.</p></div>
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Prueba de fuga en verde (desplazar la variable y verificar que el resultado no mejora) y cero nulos inesperados.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Cálculo por producto en paralelo. De 4 a 181 productos con 60 meses (45 veces más muestra).</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Medio: la fuga temporal es el error más común y el más silencioso.</p></div>
+  </div>
+</section>
+<section class="panel" id="p4">
+  <header>
+    <span class="num grande">4</span>
+    <div><h3>EDA automático</h3><p class="sub">Reporte · <span class="tag est-hecho">Hecho</span> · Esfuerzo estimado: 2 días</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>datos_limpios/* + etl_log.json</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>salidas/figuras (16) + eda_stats.json → informe_eda.ipynb / .html / .css</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>`src/eda.py` genera 16 figuras y `eda_stats.json` (~80 s).</li><li>`src/informe.py` arma el notebook, lo ejecuta y exporta el espejo HTML+CSS.</li><li>Toda cifra del informe sale del JSON, no de texto escrito a mano.</li></ul><p class="mini"><b>Herramientas:</b> matplotlib, seaborn, statsmodels (STL, ACF), nbformat</p></div>
+    <div class="caja agente-box aut-x">
+      <h4>Agente de IA · Agente de Reporte</h4>
+      <p class="nivel">Autonomía: <b>Autónomo acotado</b></p>
+      <p><b>Qué hace.</b> Regenera el informe cada mes y redacta los hallazgos en lenguaje claro a partir de `eda_stats.json`. Señala qué cambió frente al mes anterior.</p>
+      <p><b>Límite.</b> Un validador compara cada número del texto con el JSON; si no coincide, bloquea la publicación. No puede citar cifras que no estén en el JSON.</p>
+    </div>
+  </div>
+  
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Cada cifra citada en el texto coincide con el JSON. 16 figuras generadas.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Un informe por grupo de productos (alimentos, hortalizas, tubérculos) en vez de uno gigante.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Bajo. El riesgo real es un LLM que invente cifras: lo cubre el validador.</p></div>
+  </div>
+</section>
+<section class="panel" id="p5">
+  <header>
+    <span class="num grande">5</span>
+    <div><h3>Modelado y experimentos</h3><p class="sub">ML · <span class="tag est-hecho">Hecho</span> · Esfuerzo estimado: Hecho (~1 min de cómputo)</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>maestra / feature store</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>salidas/ml_predicciones_oos.csv (walk-forward 2022-01 a 2024-11, 35 orígenes) + modelos/centinela_modelo.joblib</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>`src/ml_modelo.py`: un modelo de grupo (181 productos). Canónico: Random Forest solo con precio, fijado antes de ver resultados.</li><li>Walk-forward con ventana expansiva, hiperparámetros fijos, sin GridSearch sobre el periodo evaluado.</li><li>Siempre se calculan las bases: clase mayoritaria, &quot;repite la última dirección&quot; y signo del índice estacional.</li></ul><p class="mini"><b>Herramientas:</b> scikit-learn, HistGradientBoosting, LightGBM, MLflow, joblib / Dask</p></div>
+    <div class="caja agente-box aut-x">
+      <h4>Agente de IA · Agente Experimentador</h4>
+      <p class="nivel">Autonomía: <b>Autónomo acotado</b></p>
+      <p><b>Qué hace.</b> Lanza la búsqueda de hiperparámetros y de combinaciones de variables, registra cada corrida y resume qué probó y qué no funcionó.</p>
+      <p><b>Límite.</b> Presupuesto de cómputo y de número de corridas fijado de antemano. No puede cambiar el criterio de éxito ni los datos de prueba.</p>
+    </div>
+  </div>
+  
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Todas las corridas registradas con semilla, versión de datos y versión de código (reproducibles).</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Corridas independientes en paralelo (por grupo y por ventana). Aquí se concentra el cómputo.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Alto: con 60 meses por serie es fácil sobreajustar. Por eso existe la etapa 6 con otro agente.</p></div>
+  </div>
+</section>
+<section class="panel" id="p6">
+  <header>
+    <span class="num grande">6</span>
+    <div><h3>Evaluación y compuerta</h3><p class="sub">ML · <span class="tag est-hecho">Hecho</span> · Esfuerzo estimado: Hecho</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>predicciones walk-forward + bases</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>salidas/ml_resumen.csv, ml_resultados.json (veredicto O3 por código), ml_confiabilidad.json, ml_calibracion.csv</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>Exactitud con IC95 por bootstrap de MESES (los productos de un mes están correlacionados), Wilson, McNemar, F1, AUC.</li><li>O3 calculado por el código: IC inferior &gt; 50 % y IC inferior de la diferencia vs &quot;repite&quot; &gt; 0.</li><li>`src/ml_confiabilidad.py`: homogeneidad alcance vs grupo, AUC, estabilidad por año, calibración y potencia.</li></ul><p class="mini"><b>Herramientas:</b> statsmodels, scipy (Wilson, McNemar), bootstrap por meses</p></div>
+    <div class="caja agente-box aut-s">
+      <h4>Agente de IA · Agente Revisor Estadístico</h4>
+      <p class="nivel">Autonomía: <b>Sugiere</b></p>
+      <p><b>Qué hace.</b> Segunda opinión independiente: recalcula las métricas desde las predicciones crudas, corrige por comparaciones múltiples y escribe el veredicto con su motivo.</p>
+      <p><b>Límite.</b> No comparte contexto con el Experimentador, así no hereda sus sesgos. Su rechazo bloquea; la promoción siempre la decide un humano.</p>
+    </div>
+  </div>
+  <div class="caja humano"><h4>Punto de control humano</h4><p>Decidir la promoción a producción.</p></div>
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>181 productos: 60,4 % vs 55,8 % de la base, Δ +4,6 pts (IC95 +3,2 a +6,1): cumple O3. Los 4 productos: 60,0 %, Δ +4,3 (IC95 −4,3 a +12,9): O3 propio no demostrable (harían falta ~257 meses de prueba). Se publica el nivel de grupo.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Evaluación por producto y agregada; las métricas son baratas, escalan sin problema.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Medio: la tentación de relajar el criterio cuando el resultado del alcance es débil. La evidencia complementaria se etiqueta como tal y no reemplaza al O3.</p></div>
+  </div>
+</section>
+<section class="panel" id="p7">
+  <header>
+    <span class="num grande">7</span>
+    <div><h3>Servicio y alertas</h3><p class="sub">Producción · <span class="tag est-parcial">Parcial</span> · Esfuerzo estimado: Tablero y ONNX hechos; faltan API y mensajería (4 días)</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>modelo en ONNX + últimos precios</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>modelos/centinela_modelo.onnx (1,1 MB) + salidas/ml_alertas_onnx.csv + entregables/tablero_centinela.html</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>`src/ml_onnx.py` exporta el modelo a ONNX y resuelve las alertas con onnxruntime; falla si la diferencia con sklearn supera 1e-4 (hoy 1,4e-07). Hash SHA-256 en `centinela_modelo.json`.</li><li>`src/tablero.py` arma el tablero: nivel 1 alertas de grupo con su acierto histórico; nivel 2 los 4 productos con la señal marcada experimental.</li></ul><p class="mini"><b>Herramientas:</b> skl2onnx, onnxruntime, HTML+CSS estático (FastAPI / WhatsApp: pendiente)</p></div>
+    <div class="caja agente-box aut-a">
+      <h4>Agente de IA · Agente Narrador</h4>
+      <p class="nivel">Autonomía: <b>Ejecuta con aprobación</b></p>
+      <p><b>Qué hace.</b> Convierte la salida del modelo en un mensaje claro para productores y compradores, con el lenguaje del sector.</p>
+      <p><b>Límite.</b> Solo puede citar números que vengan de la API. Usa plantillas aprobadas. No da consejos de compra o venta. Los mensajes nuevos de otro tipo requieren aprobación.</p>
+    </div>
+  </div>
+  <div class="caja humano"><h4>Punto de control humano</h4><p>Aprobar las plantillas de mensaje y cualquier tipo de alerta nuevo.</p></div>
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Cada mensaje incluye incertidumbre y fecha de datos. Sin eso no sale.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Alertas por lotes y por suscripción. Cacheo de la predicción mensual (una sola corrida, muchas lecturas).</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Alto reputacional si se promete exactitud que el modelo no tiene.</p></div>
+  </div>
+</section>
+<section class="panel" id="p8">
+  <header>
+    <span class="num grande">8</span>
+    <div><h3>Monitoreo y reentrenamiento</h3><p class="sub">Operación · <span class="tag est-propuesto">Propuesto</span> · Esfuerzo estimado: 5 días</p></div>
+  </header>
+  <div class="io">
+    <div class="caja"><h4>Entra</h4><p>predicciones publicadas + precios reales del mes siguiente</p></div>
+    <div class="io-flecha" aria-hidden="true"></div>
+    <div class="caja"><h4>Sale</h4><p>panel de desempeño real, alertas de deriva, disparo de reentrenamiento</p></div>
+  </div>
+  <div class="cols">
+    <div class="caja"><h4>Qué hace el código (determinista)</h4><ul><li>Cada mes se compara lo predicho con lo ocurrido y se actualiza la exactitud con su IC.</li><li>Deriva de datos: PSI y KS sobre las variables; cambio de escala o de fechas dispara la etapa 2.</li><li>Reentrenamiento mensual programado en un entorno de prueba.</li></ul><p class="mini"><b>Herramientas:</b> Evidently / PSI y KS, Prometheus o logs, Dagster / Prefect</p></div>
+    <div class="caja agente-box aut-a">
+      <h4>Agente de IA · Agente Monitor</h4>
+      <p class="nivel">Autonomía: <b>Ejecuta con aprobación</b></p>
+      <p><b>Qué hace.</b> Detecta deriva y caídas de desempeño, abre un incidente con diagnóstico y lanza el reentrenamiento en el entorno de prueba.</p>
+      <p><b>Límite.</b> Nunca promueve un modelo solo. Si el desempeño real cae bajo la base durante 3 meses, retira la alerta de predicción y deja la vista estacional.</p>
+    </div>
+  </div>
+  <div class="caja humano"><h4>Punto de control humano</h4><p>Revisar el incidente y aprobar un modelo reentrenado.</p></div>
+  <div class="cols tres">
+    <div class="caja"><h4>Compuerta de calidad</h4><p>Desempeño real ≥ base en ventana móvil de 6 meses; si no, se degrada a modo estacional.</p></div>
+    <div class="caja"><h4>Cómo escala</h4><p>Monitoreo por producto, con umbrales por grupo. Cierra el ciclo: vuelve a las etapas 2 y 5.</p></div>
+    <div class="caja"><h4>Riesgo</h4><p>Medio: con pocos datos mensuales la señal de deriva es lenta y ruidosa.</p></div>
+  </div>
+</section></div>
+
+<h2>Mapa de agentes y su autonomía</h2>
+<div class="tabla-agentes"><table>
+<tr><th>Agente</th><th>Etapa</th><th>Autonomía</th><th>Qué hace</th><th>Su límite</th></tr><tr><td><b>Agente de Ingesta</b></td><td>1 · Captura de fuentes</td><td><span class="pill x">Autónomo acotado</span></td><td>Vigila las fuentes, detecta un informe nuevo o un cambio de esquema (columna renombrada, hoja nueva), descarga y valida el manifiesto.</td><td>Solo escribe en `raw/`. No toca datos limpios. Si el esquema cambia, detiene la corrida y avisa; no intenta adivinar.</td></tr><tr><td><b>Agente de Calidad y Anomalías</b></td><td>2 · Limpieza y calidad</td><td><span class="pill s">Sugiere</span></td><td>Perfila cada carga contra la línea base (meses distintos, mediana anual por producto, saltos de ×1000, productos nuevos). Si aparece un defecto nuevo, redacta una regla de corrección propuesta con evidencia (ejemplos y gráfico). También unifica nombres de producto y mercado con LLM + embeddings.</td><td>Nunca modifica `src/etl.py` ni los datos por su cuenta: entrega una propuesta. Las reglas nuevas pasan por revisión humana.</td></tr><tr><td><b>Agente de Variables</b></td><td>3 · Maestra y variables</td><td><span class="pill a">Ejecuta con aprobación</span></td><td>Propone variables candidatas, las construye en un entorno aislado, pasa la prueba de fuga y mide su ganancia con walk-forward. Descarta las que no aportan.</td><td>Trabaja en rama separada. Solo se fusiona una variable con aprobación y con ganancia demostrada (IC95), para no inflar el modelo.</td></tr><tr><td><b>Agente de Reporte</b></td><td>4 · EDA automático</td><td><span class="pill x">Autónomo acotado</span></td><td>Regenera el informe cada mes y redacta los hallazgos en lenguaje claro a partir de `eda_stats.json`. Señala qué cambió frente al mes anterior.</td><td>Un validador compara cada número del texto con el JSON; si no coincide, bloquea la publicación. No puede citar cifras que no estén en el JSON.</td></tr><tr><td><b>Agente Experimentador</b></td><td>5 · Modelado y experimentos</td><td><span class="pill x">Autónomo acotado</span></td><td>Lanza la búsqueda de hiperparámetros y de combinaciones de variables, registra cada corrida y resume qué probó y qué no funcionó.</td><td>Presupuesto de cómputo y de número de corridas fijado de antemano. No puede cambiar el criterio de éxito ni los datos de prueba.</td></tr><tr><td><b>Agente Revisor Estadístico</b></td><td>6 · Evaluación y compuerta</td><td><span class="pill s">Sugiere</span></td><td>Segunda opinión independiente: recalcula las métricas desde las predicciones crudas, corrige por comparaciones múltiples y escribe el veredicto con su motivo.</td><td>No comparte contexto con el Experimentador, así no hereda sus sesgos. Su rechazo bloquea; la promoción siempre la decide un humano.</td></tr><tr><td><b>Agente Narrador</b></td><td>7 · Servicio y alertas</td><td><span class="pill a">Ejecuta con aprobación</span></td><td>Convierte la salida del modelo en un mensaje claro para productores y compradores, con el lenguaje del sector.</td><td>Solo puede citar números que vengan de la API. Usa plantillas aprobadas. No da consejos de compra o venta. Los mensajes nuevos de otro tipo requieren aprobación.</td></tr><tr><td><b>Agente Monitor</b></td><td>8 · Monitoreo y reentrenamiento</td><td><span class="pill a">Ejecuta con aprobación</span></td><td>Detecta deriva y caídas de desempeño, abre un incidente con diagnóstico y lanza el reentrenamiento en el entorno de prueba.</td><td>Nunca promueve un modelo solo. Si el desempeño real cae bajo la base durante 3 meses, retira la alerta de predicción y deja la vista estacional.</td></tr></table></div>
+
+<h2>Cinco reglas para todos los agentes</h2>
+<div class="guard"><div><b>Datos crudos intocables</b>Ningún agente escribe en `raw/`, salvo el de Ingesta, y solo para añadir.</div><div><b>Nada se promueve solo</b>Un modelo o una regla de limpieza nueva siempre pasa por una persona.</div><div><b>Cero cifras inventadas</b>Todo texto generado se valida contra el JSON o la API de origen.</div><div><b>Presupuesto y bitácora</b>Cada agente tiene límite de cómputo y registro completo de lo que hizo y por qué.</div><div><b>Revisión independiente</b>Quien entrena no es quien evalúa: agentes distintos, contextos separados.</div></div>
+
+<h2>Esfuerzo total y orden de construcción</h2>
+<p>36 días-persona (≈7 semanas, 1 persona con experiencia en ML, ±40 %). Orden sugerido: <b>1)</b> compuerta de la etapa 2 y validador del 4 (bajo costo, alto valor) →
+<b>2)</b> etapas 3 y 5 con el modelo por grupo de productos → <b>3)</b> Revisor Estadístico (6) antes de cualquier alerta →
+<b>4)</b> servicio y monitoreo (7 y 8) solo si la etapa 6 aprueba un modelo; si no, se publica la vista estacional.</p>
+</div></body></html>

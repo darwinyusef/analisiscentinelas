@@ -1,0 +1,182 @@
+mes,mes_objetivo,producto,grupo,foco,precio,prob_sube,alerta,idx_estacional
+2024-12-01,2025-01-01,aceite vegetal mezcla,procesados,False,9189.0,0.6578,ALZA PROBABLE,0.0513
+2024-12-01,2025-01-01,acelga,verduras y hortalizas,False,2601.0,0.5567,SIN SEÑAL,0.0216
+2024-12-01,2025-01-01,aguacate hass,frutas,False,4828.0,0.4447,SIN SEÑAL,-0.0564
+2024-12-01,2025-01-01,aguacate papelillo,frutas,False,7767.0,0.4048,SIN SEÑAL,0.0301
+2024-12-01,2025-01-01,ahuyama,verduras y hortalizas,False,918.0,0.4072,SIN SEÑAL,-0.0742
+2024-12-01,2025-01-01,aji topito dulce,verduras y hortalizas,False,4577.0,0.4345,SIN SEÑAL,0.1453
+2024-12-01,2025-01-01,ajo,verduras y hortalizas,False,11401.0,0.6394,SIN SEÑAL,0.0017
+2024-12-01,2025-01-01,ajo importado,verduras y hortalizas,False,9857.0,0.4946,SIN SEÑAL,-0.019
+2024-12-01,2025-01-01,alas de pollo sin costillar,carnes,False,11940.0,0.4518,SIN SEÑAL,-0.0231
+2024-12-01,2025-01-01,almejas con concha,pescados,False,7850.0,0.3957,SIN SEÑAL,-0.0485
+2024-12-01,2025-01-01,apio,verduras y hortalizas,False,1198.0,0.6774,ALZA PROBABLE,0.1493
+2024-12-01,2025-01-01,arracacha blanca,"tuberculos, raices y platanos",False,3194.0,0.5136,SIN SEÑAL,0.0269
+2024-12-01,2025-01-01,arroz de primera,granos y cereales,False,3924.0,0.4465,SIN SEÑAL,0.0126
+2024-12-01,2025-01-01,arveja enlatada,procesados,False,10711.0,0.4331,SIN SEÑAL,0.0281
+2024-12-01,2025-01-01,arveja verde en vaina,verduras y hortalizas,False,4257.0,0.5714,SIN SEÑAL,0.0229
+2024-12-01,2025-01-01,arveja verde seca importada,granos y cereales,False,4305.0,0.5256,SIN SEÑAL,0.0113
+2024-12-01,2025-01-01,azucar morena,procesados,False,3916.0,0.4988,SIN SEÑAL,0.0005
+2024-12-01,2025-01-01,azucar refinada,procesados,False,4030.0,0.4938,SIN SEÑAL,-0.0061
+2024-12-01,2025-01-01,bagre rayado en postas congelado,pescados,False,35450.0,0.5086,SIN SEÑAL,0.0073
+2024-12-01,2025-01-01,bagre rayado entero congelado,pescados,False,25830.0,0.5066,SIN SEÑAL,-0.0428
+2024-12-01,2025-01-01,banano bocadillo,frutas,False,2007.0,0.3843,SIN SEÑAL,0.0128
+2024-12-01,2025-01-01,banano criollo,frutas,False,2708.0,0.5157,SIN SEÑAL,-0.0168
+2024-12-01,2025-01-01,"basa, filete congelado importado",pescados,False,14360.0,0.5608,SIN SEÑAL,-0.0003
+2024-12-01,2025-01-01,berenjena,verduras y hortalizas,False,2527.0,0.7505,ALZA PROBABLE,0.2704
+2024-12-01,2025-01-01,bocachico importado congelado,pescados,False,13150.0,0.5667,SIN SEÑAL,0.0076
+2024-12-01,2025-01-01,borojo,frutas,False,5039.0,0.4184,SIN SEÑAL,-0.0027
+2024-12-01,2025-01-01,breva,frutas,False,9852.0,0.3151,BAJA PROBABLE,-0.0727
+2024-12-01,2025-01-01,brocoli,verduras y hortalizas,False,2515.0,0.5601,SIN SEÑAL,0.1887
+2024-12-01,2025-01-01,cafe instantaneo,procesados,False,134703.0,0.627,SIN SEÑAL,0.0156
+2024-12-01,2025-01-01,calabacin,verduras y hortalizas,False,1703.0,0.3172,BAJA PROBABLE,-0.0186
+2024-12-01,2025-01-01,calabaza,verduras y hortalizas,False,889.0,0.4333,SIN SEÑAL,-0.1108
+2024-12-01,2025-01-01,calamar anillos,pescados,False,43435.0,0.5151,SIN SEÑAL,0.0105
+2024-12-01,2025-01-01,camaron tigre precocido seco,pescados,False,38375.0,0.454,SIN SEÑAL,0.0111
+2024-12-01,2025-01-01,"carne de cerdo, brazo sin hueso",carnes,False,20310.0,0.6103,SIN SEÑAL,0.0275
+2024-12-01,2025-01-01,"carne de cerdo, costilla",carnes,False,24060.0,0.6014,SIN SEÑAL,-0.0083
+2024-12-01,2025-01-01,"carne de cerdo, espinazo",carnes,False,10490.0,0.615,SIN SEÑAL,0.0155
+2024-12-01,2025-01-01,"carne de cerdo, lomo sin hueso",carnes,False,25375.0,0.5909,SIN SEÑAL,0.02
+2024-12-01,2025-01-01,"carne de cerdo, pernil sin hueso",carnes,False,22590.0,0.6351,SIN SEÑAL,0.0412
+2024-12-01,2025-01-01,"carne de cerdo, tocino barriga",carnes,False,28375.0,0.6167,SIN SEÑAL,0.0005
+2024-12-01,2025-01-01,"carne de cerdo, tocino papada",carnes,False,18175.0,0.6128,SIN SEÑAL,0.0209
+2024-12-01,2025-01-01,"carne de res, bola de brazo",carnes,False,32670.0,0.4354,SIN SEÑAL,-0.0145
+2024-12-01,2025-01-01,"carne de res, bola de pierna",carnes,False,33590.0,0.5389,SIN SEÑAL,0.0092
+2024-12-01,2025-01-01,"carne de res, bota",carnes,False,33610.0,0.5593,SIN SEÑAL,0.0028
+2024-12-01,2025-01-01,"carne de res, cadera",carnes,False,33590.0,0.4934,SIN SEÑAL,0.0098
+2024-12-01,2025-01-01,"carne de res, centro de pierna",carnes,False,33735.0,0.4715,SIN SEÑAL,0.0097
+2024-12-01,2025-01-01,"carne de res, chatas",carnes,False,47620.0,0.4451,SIN SEÑAL,-0.0053
+2024-12-01,2025-01-01,"carne de res, costilla",carnes,False,18825.0,0.4972,SIN SEÑAL,0.0606
+2024-12-01,2025-01-01,"carne de res, falda",carnes,False,29325.0,0.5807,SIN SEÑAL,0.0125
+2024-12-01,2025-01-01,"carne de res, lomo fino",carnes,False,55740.0,0.5799,SIN SEÑAL,0.0072
+2024-12-01,2025-01-01,"carne de res, morrillo",carnes,False,29090.0,0.587,SIN SEÑAL,0.0221
+2024-12-01,2025-01-01,"carne de res, muchacho",carnes,False,33310.0,0.4622,SIN SEÑAL,0.0023
+2024-12-01,2025-01-01,"carne de res, murillo",carnes,False,26220.0,0.4226,SIN SEÑAL,0.0007
+2024-12-01,2025-01-01,"carne de res, paletero",carnes,False,29885.0,0.5376,SIN SEÑAL,-0.0044
+2024-12-01,2025-01-01,"carne de res, pecho",carnes,False,25820.0,0.4541,SIN SEÑAL,0.0092
+2024-12-01,2025-01-01,"carne de res, punta de anca",carnes,False,49085.0,0.5763,SIN SEÑAL,0.027
+2024-12-01,2025-01-01,"carne de res, sobrebarriga",carnes,False,28370.0,0.4253,SIN SEÑAL,0.019
+2024-12-01,2025-01-01,cazuela de mariscos (paquete),pescados,False,20675.0,0.4754,SIN SEÑAL,0.0276
+2024-12-01,2025-01-01,cebolla cabezona blanca,verduras y hortalizas,False,1850.0,0.5584,SIN SEÑAL,-0.0017
+2024-12-01,2025-01-01,cebolla cabezona roja importada,verduras y hortalizas,False,2873.0,0.5387,SIN SEÑAL,0.0434
+2024-12-01,2025-01-01,cebolla junca,verduras y hortalizas,True,3318.0,0.4848,SIN SEÑAL,0.0488
+2024-12-01,2025-01-01,cebolla puerro,verduras y hortalizas,False,7602.0,0.2171,BAJA PROBABLE,-0.0472
+2024-12-01,2025-01-01,chocolate amargo,procesados,False,62282.0,0.5371,SIN SEÑAL,0.0072
+2024-12-01,2025-01-01,chocolate instantaneo,procesados,False,54887.0,0.6419,SIN SEÑAL,0.0145
+2024-12-01,2025-01-01,chocolo mazorca,verduras y hortalizas,False,1656.0,0.5847,SIN SEÑAL,0.0412
+2024-12-01,2025-01-01,cidra,verduras y hortalizas,False,686.0,0.4358,SIN SEÑAL,-0.0332
+2024-12-01,2025-01-01,cilantro,verduras y hortalizas,False,5722.0,0.203,BAJA PROBABLE,-0.3429
+2024-12-01,2025-01-01,ciruela roja,frutas,False,3648.0,0.4603,SIN SEÑAL,0.2317
+2024-12-01,2025-01-01,coco,frutas,False,12615.0,0.2858,BAJA PROBABLE,-0.1014
+2024-12-01,2025-01-01,coles,verduras y hortalizas,False,2051.0,0.5078,SIN SEÑAL,-0.1136
+2024-12-01,2025-01-01,coliflor,verduras y hortalizas,False,2498.0,0.6157,SIN SEÑAL,0.0943
+2024-12-01,2025-01-01,color (bolsita),procesados,False,19875.0,0.6087,SIN SEÑAL,-0.0075
+2024-12-01,2025-01-01,curuba,frutas,False,2927.0,0.5444,SIN SEÑAL,0.0777
+2024-12-01,2025-01-01,durazno nacional,frutas,False,7696.0,0.3881,SIN SEÑAL,0.0779
+2024-12-01,2025-01-01,espinaca,verduras y hortalizas,False,2627.0,0.4892,SIN SEÑAL,-0.1485
+2024-12-01,2025-01-01,fresa,frutas,False,11767.0,0.4275,SIN SEÑAL,0.0046
+2024-12-01,2025-01-01,frijol cargamanto blanco,granos y cereales,False,10775.0,0.5067,SIN SEÑAL,-0.0495
+2024-12-01,2025-01-01,frijol cargamanto rojo,granos y cereales,False,9885.0,0.5118,SIN SEÑAL,0.0467
+2024-12-01,2025-01-01,frijol enlatado,procesados,False,21005.0,0.6435,SIN SEÑAL,0.005
+2024-12-01,2025-01-01,frijol nima calima,granos y cereales,False,6775.0,0.5027,SIN SEÑAL,0.0162
+2024-12-01,2025-01-01,frijol verde cargamanto,verduras y hortalizas,False,3347.0,0.3587,SIN SEÑAL,-0.113
+2024-12-01,2025-01-01,galletas saladas,procesados,False,14951.0,0.655,ALZA PROBABLE,0.0029
+2024-12-01,2025-01-01,garbanzo importado,granos y cereales,False,6214.0,0.5044,SIN SEÑAL,0.0028
+2024-12-01,2025-01-01,gelatina,procesados,False,39479.0,0.6638,ALZA PROBABLE,0.0047
+2024-12-01,2025-01-01,granadilla,frutas,False,7167.0,0.6248,SIN SEÑAL,0.1181
+2024-12-01,2025-01-01,guanabana,frutas,False,5230.0,0.3824,SIN SEÑAL,-0.0053
+2024-12-01,2025-01-01,guayaba manzana,frutas,False,5361.0,0.5097,SIN SEÑAL,0.0122
+2024-12-01,2025-01-01,guayaba pera,frutas,False,3010.0,0.456,SIN SEÑAL,-0.0153
+2024-12-01,2025-01-01,guayaba pera valluna,frutas,False,3305.0,0.454,SIN SEÑAL,0.0161
+2024-12-01,2025-01-01,gulupa,frutas,False,2129.0,0.4342,SIN SEÑAL,-0.0275
+2024-12-01,2025-01-01,habichuela,verduras y hortalizas,False,2566.0,0.4729,SIN SEÑAL,0.2287
+2024-12-01,2025-01-01,huevo rojo a,lacteos y huevos,False,407.0,0.4749,SIN SEÑAL,-0.0434
+2024-12-01,2025-01-01,huevo rojo aa,lacteos y huevos,False,436.0,0.4843,SIN SEÑAL,-0.0151
+2024-12-01,2025-01-01,huevo rojo b,lacteos y huevos,False,386.0,0.4642,SIN SEÑAL,-0.0469
+2024-12-01,2025-01-01,huevo rojo extra,lacteos y huevos,False,493.0,0.4812,SIN SEÑAL,-0.0099
+2024-12-01,2025-01-01,jugo instantaneo (sobre),procesados,False,37750.0,0.6662,ALZA PROBABLE,0.0168
+2024-12-01,2025-01-01,kiwi,frutas,False,12711.0,0.5116,SIN SEÑAL,-0.0168
+2024-12-01,2025-01-01,langostino 16-20,pescados,False,66775.0,0.5622,SIN SEÑAL,0.0069
+2024-12-01,2025-01-01,langostino u12,pescados,False,95275.0,0.5163,SIN SEÑAL,-0.0272
+2024-12-01,2025-01-01,leche en polvo,lacteos y huevos,False,31765.0,0.5516,SIN SEÑAL,0.0228
+2024-12-01,2025-01-01,lechuga batavia,verduras y hortalizas,False,1340.0,0.3757,SIN SEÑAL,-0.1984
+2024-12-01,2025-01-01,lechuga crespa verde,verduras y hortalizas,False,2572.0,0.3343,BAJA PROBABLE,-0.2849
+2024-12-01,2025-01-01,lenteja importada,granos y cereales,False,7652.0,0.4596,SIN SEÑAL,0.0026
+2024-12-01,2025-01-01,limon mandarino,frutas,False,1894.0,0.5321,SIN SEÑAL,0.1692
+2024-12-01,2025-01-01,limon tahiti,frutas,False,1616.0,0.4763,SIN SEÑAL,0.2157
+2024-12-01,2025-01-01,lomitos de atun en lata,procesados,False,32736.0,0.6144,SIN SEÑAL,-0.0176
+2024-12-01,2025-01-01,lulo,frutas,False,4088.0,0.6704,ALZA PROBABLE,0.0842
+2024-12-01,2025-01-01,maiz amarillo cascara,granos y cereales,False,2160.0,0.5725,SIN SEÑAL,-0.0643
+2024-12-01,2025-01-01,maiz amarillo trillado,granos y cereales,False,2520.0,0.5703,SIN SEÑAL,-0.0757
+2024-12-01,2025-01-01,maiz blanco cascara,granos y cereales,False,1970.0,0.3963,SIN SEÑAL,-0.0211
+2024-12-01,2025-01-01,maiz blanco trillado,granos y cereales,False,2315.0,0.3585,SIN SEÑAL,-0.0548
+2024-12-01,2025-01-01,maiz enlatado,procesados,False,20299.0,0.6454,SIN SEÑAL,0.0015
+2024-12-01,2025-01-01,maiz pira,granos y cereales,False,4085.0,0.4331,SIN SEÑAL,0.0087
+2024-12-01,2025-01-01,mandarina oneco,frutas,False,2046.0,0.6509,ALZA PROBABLE,0.3317
+2024-12-01,2025-01-01,mango tommy,frutas,False,1153.0,0.6916,ALZA PROBABLE,0.1989
+2024-12-01,2025-01-01,manzana nacional,frutas,False,5036.0,0.5411,SIN SEÑAL,0.0137
+2024-12-01,2025-01-01,manzana roja importada,frutas,False,8204.0,0.626,SIN SEÑAL,0.0295
+2024-12-01,2025-01-01,manzana royal gala importada,frutas,False,7530.0,0.5983,SIN SEÑAL,0.0536
+2024-12-01,2025-01-01,manzana verde importada,frutas,False,8787.0,0.4679,SIN SEÑAL,0.0038
+2024-12-01,2025-01-01,maracuya antioqueno,frutas,False,2594.0,0.5572,SIN SEÑAL,0.155
+2024-12-01,2025-01-01,margarina,procesados,False,14813.0,0.626,SIN SEÑAL,0.0139
+2024-12-01,2025-01-01,mayonesa doy pack,procesados,False,28633.0,0.632,SIN SEÑAL,0.0056
+2024-12-01,2025-01-01,melon cantalupo,frutas,False,4206.0,0.6883,ALZA PROBABLE,0.1109
+2024-12-01,2025-01-01,"merluza, filete importado",pescados,False,24425.0,0.5584,SIN SEÑAL,-0.0307
+2024-12-01,2025-01-01,mora de castilla,frutas,False,3448.0,0.5314,SIN SEÑAL,0.0876
+2024-12-01,2025-01-01,muslos de pollo sin rabadilla,carnes,False,10815.0,0.3967,SIN SEÑAL,-0.0384
+2024-12-01,2025-01-01,naranja valencia,frutas,False,2233.0,0.5212,SIN SEÑAL,0.167
+2024-12-01,2025-01-01,palmitos de mar,pescados,False,17808.0,0.3973,SIN SEÑAL,-0.0561
+2024-12-01,2025-01-01,panela cuadrada blanca,procesados,False,5549.0,0.6696,ALZA PROBABLE,0.0323
+2024-12-01,2025-01-01,panela redonda blanca,procesados,False,5225.0,0.5261,SIN SEÑAL,0.0167
+2024-12-01,2025-01-01,panela redonda morena,procesados,False,5294.0,0.5034,SIN SEÑAL,0.0081
+2024-12-01,2025-01-01,papa capira,"tuberculos, raices y platanos",True,2349.0,0.6102,SIN SEÑAL,0.1428
+2024-12-01,2025-01-01,papa criolla limpia,"tuberculos, raices y platanos",True,1996.0,0.5435,SIN SEÑAL,0.0671
+2024-12-01,2025-01-01,papa nevada,"tuberculos, raices y platanos",False,1902.0,0.7027,ALZA PROBABLE,0.1288
+2024-12-01,2025-01-01,papaya maradol,frutas,False,3109.0,0.6679,ALZA PROBABLE,0.1153
+2024-12-01,2025-01-01,papaya tainung,frutas,False,2566.0,0.6113,SIN SEÑAL,0.0431
+2024-12-01,2025-01-01,pargo rojo entero congelado,pescados,False,43850.0,0.5892,SIN SEÑAL,-0.0094
+2024-12-01,2025-01-01,pastas alimenticias,procesados,False,7195.0,0.4521,SIN SEÑAL,0.012
+2024-12-01,2025-01-01,patilla,frutas,False,1489.0,0.3777,SIN SEÑAL,0.1482
+2024-12-01,2025-01-01,patilla baby,frutas,False,3173.0,0.5087,SIN SEÑAL,0.2231
+2024-12-01,2025-01-01,pechuga de pollo,carnes,False,15175.0,0.5021,SIN SEÑAL,-0.0097
+2024-12-01,2025-01-01,pepino cohombro,verduras y hortalizas,False,1481.0,0.5829,SIN SEÑAL,0.2288
+2024-12-01,2025-01-01,pera importada,frutas,False,6886.0,0.5412,SIN SEÑAL,0.1808
+2024-12-01,2025-01-01,perejil,verduras y hortalizas,False,3862.0,0.4746,SIN SEÑAL,-0.1815
+2024-12-01,2025-01-01,pierna pernil con rabadilla,carnes,False,9975.0,0.4202,SIN SEÑAL,-0.0253
+2024-12-01,2025-01-01,piernas de pollo,carnes,False,9975.0,0.405,SIN SEÑAL,-0.037
+2024-12-01,2025-01-01,pimenton,verduras y hortalizas,False,3588.0,0.4164,SIN SEÑAL,-0.0299
+2024-12-01,2025-01-01,pimenton verde,verduras y hortalizas,False,6567.0,0.412,SIN SEÑAL,0.0016
+2024-12-01,2025-01-01,pina gold,frutas,False,2547.0,0.5904,SIN SEÑAL,0.1253
+2024-12-01,2025-01-01,pitahaya,frutas,False,8467.0,0.471,SIN SEÑAL,0.025
+2024-12-01,2025-01-01,platano comino,"tuberculos, raices y platanos",False,3027.0,0.4793,SIN SEÑAL,0.08
+2024-12-01,2025-01-01,platano dominico verde,"tuberculos, raices y platanos",False,1849.0,0.3268,BAJA PROBABLE,0.0617
+2024-12-01,2025-01-01,platano guineo,"tuberculos, raices y platanos",False,2789.0,0.3546,SIN SEÑAL,-0.0398
+2024-12-01,2025-01-01,platano harton maduro,"tuberculos, raices y platanos",False,2840.0,0.474,SIN SEÑAL,0.0545
+2024-12-01,2025-01-01,platano harton verde,"tuberculos, raices y platanos",False,2841.0,0.4693,SIN SEÑAL,0.0453
+2024-12-01,2025-01-01,platano harton verde eje cafetero,"tuberculos, raices y platanos",False,3239.0,0.474,SIN SEÑAL,0.0355
+2024-12-01,2025-01-01,pollo entero congelado sin visceras,carnes,False,13125.0,0.4665,SIN SEÑAL,-0.012
+2024-12-01,2025-01-01,queso campesino,lacteos y huevos,False,23950.0,0.6216,SIN SEÑAL,0.0759
+2024-12-01,2025-01-01,queso costeno,lacteos y huevos,False,24825.0,0.6397,SIN SEÑAL,0.0399
+2024-12-01,2025-01-01,queso cuajada,lacteos y huevos,False,21410.0,0.5564,SIN SEÑAL,-0.0006
+2024-12-01,2025-01-01,queso doble crema,lacteos y huevos,False,23710.0,0.5612,SIN SEÑAL,0.0756
+2024-12-01,2025-01-01,rabano rojo,verduras y hortalizas,False,2556.0,0.5024,SIN SEÑAL,-0.3663
+2024-12-01,2025-01-01,remolacha,verduras y hortalizas,False,1215.0,0.3843,SIN SEÑAL,-0.1433
+2024-12-01,2025-01-01,repollo blanco,verduras y hortalizas,False,430.0,0.6045,SIN SEÑAL,-0.01
+2024-12-01,2025-01-01,repollo morado,verduras y hortalizas,False,817.0,0.4531,SIN SEÑAL,0.0652
+2024-12-01,2025-01-01,"robalo, filete congelado",pescados,False,58125.0,0.4341,SIN SEÑAL,0.0224
+2024-12-01,2025-01-01,sal yodada,procesados,False,2237.0,0.6962,ALZA PROBABLE,0.0165
+2024-12-01,2025-01-01,"salmon, filete congelado",pescados,False,60125.0,0.5042,SIN SEÑAL,-0.0327
+2024-12-01,2025-01-01,salsa de tomate doy pack,procesados,False,22661.0,0.4192,SIN SEÑAL,0.0117
+2024-12-01,2025-01-01,sierra entera congelada,pescados,False,23405.0,0.5593,SIN SEÑAL,-0.0309
+2024-12-01,2025-01-01,tilapia roja entera congelada,pescados,False,21775.0,0.402,SIN SEÑAL,0.0155
+2024-12-01,2025-01-01,"tilapia, filete congelado",pescados,False,27075.0,0.6089,SIN SEÑAL,0.0391
+2024-12-01,2025-01-01,tomate chonto regional,verduras y hortalizas,True,3163.0,0.4749,SIN SEÑAL,0.0347
+2024-12-01,2025-01-01,tomate de arbol,frutas,False,1932.0,0.5497,SIN SEÑAL,0.0852
+2024-12-01,2025-01-01,tomate larga vida,verduras y hortalizas,False,4528.0,0.5213,SIN SEÑAL,0.0249
+2024-12-01,2025-01-01,trucha en corte mariposa,pescados,False,23795.0,0.5536,SIN SEÑAL,-0.0041
+2024-12-01,2025-01-01,uchuva con cascara,frutas,False,4340.0,0.561,SIN SEÑAL,-0.0723
+2024-12-01,2025-01-01,uva importada,frutas,False,18044.0,0.6191,SIN SEÑAL,0.0303
+2024-12-01,2025-01-01,uva isabela,frutas,False,4975.0,0.5703,SIN SEÑAL,0.1693
+2024-12-01,2025-01-01,uva red globe nacional,frutas,False,12521.0,0.5736,SIN SEÑAL,0.066
+2024-12-01,2025-01-01,yuca criolla,"tuberculos, raices y platanos",False,1855.0,0.6047,SIN SEÑAL,0.0555
+2024-12-01,2025-01-01,zanahoria larga vida,verduras y hortalizas,False,1573.0,0.254,BAJA PROBABLE,-0.0702

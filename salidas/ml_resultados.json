@@ -1,0 +1,173 @@
+{
+  "ventana": "2022-01 a 2024-11 (origenes mensuales; objetivo = mes siguiente)",
+  "modelo_canonico": "rf_precio",
+  "hiperparametros": "fijos, sin busqueda sobre el periodo evaluado",
+  "veredicto_O3": {
+    "foco_2022-24": {
+      "mejor_modelo": "rf_precio",
+      "exactitud": 60.0,
+      "ic95_meses": [
+        52.9,
+        67.1
+      ],
+      "dif_vs_repite": 4.3,
+      "dif_ic95": [
+        -4.3,
+        12.9
+      ],
+      "cumple_O3": false
+    },
+    "ampliado_2022-24": {
+      "mejor_modelo": "rf_precio",
+      "exactitud": 60.0,
+      "ic95_meses": [
+        53.3,
+        67.1
+      ],
+      "dif_vs_repite": 5.7,
+      "dif_ic95": [
+        -3.3,
+        14.8
+      ],
+      "cumple_O3": false
+    },
+    "todos_2022-24": {
+      "mejor_modelo": "rf_precio",
+      "exactitud": 60.4,
+      "ic95_meses": [
+        59.2,
+        61.7
+      ],
+      "dif_vs_repite": 4.6,
+      "dif_ic95": [
+        3.2,
+        6.1
+      ],
+      "cumple_O3": true
+    },
+    "foco_2023-24": {
+      "mejor_modelo": "rf_precio",
+      "exactitud": 57.6,
+      "ic95_meses": [
+        50.0,
+        66.3
+      ],
+      "dif_vs_repite": 0.0,
+      "dif_ic95": [
+        -12.0,
+        10.9
+      ],
+      "cumple_O3": false
+    },
+    "ampliado_2023-24": {
+      "mejor_modelo": "rf_completo",
+      "exactitud": 59.4,
+      "ic95_meses": [
+        51.4,
+        66.7
+      ],
+      "dif_vs_repite": 3.6,
+      "dif_ic95": [
+        -9.4,
+        16.7
+      ],
+      "cumple_O3": false
+    },
+    "todos_2023-24": {
+      "mejor_modelo": "rf_precio",
+      "exactitud": 59.5,
+      "ic95_meses": [
+        58.0,
+        61.2
+      ],
+      "dif_vs_repite": 5.4,
+      "dif_ic95": [
+        3.7,
+        7.1
+      ],
+      "cumple_O3": true
+    }
+  },
+  "bandas_modelo_canonico": {
+    "foco": {
+      "ALZA PROBABLE": {
+        "n": 7,
+        "pct_del_total": 5.0,
+        "acierto_pct": 57.1,
+        "wilson": [
+          25.0,
+          84.2
+        ]
+      },
+      "BAJA PROBABLE": {
+        "n": 13,
+        "pct_del_total": 9.3,
+        "acierto_pct": 76.9,
+        "wilson": [
+          49.7,
+          91.8
+        ]
+      },
+      "SIN SEÑAL": {
+        "n": 120,
+        "pct_del_total": 85.7
+      }
+    },
+    "ampliado": {
+      "ALZA PROBABLE": {
+        "n": 11,
+        "pct_del_total": 5.2,
+        "acierto_pct": 72.7,
+        "wilson": [
+          43.4,
+          90.3
+        ]
+      },
+      "BAJA PROBABLE": {
+        "n": 18,
+        "pct_del_total": 8.6,
+        "acierto_pct": 77.8,
+        "wilson": [
+          54.8,
+          91.0
+        ]
+      },
+      "SIN SEÑAL": {
+        "n": 181,
+        "pct_del_total": 86.2
+      }
+    },
+    "todos": {
+      "ALZA PROBABLE": {
+        "n": 671,
+        "pct_del_total": 10.6,
+        "acierto_pct": 70.6,
+        "wilson": [
+          67.1,
+          74.0
+        ]
+      },
+      "BAJA PROBABLE": {
+        "n": 373,
+        "pct_del_total": 5.9,
+        "acierto_pct": 72.9,
+        "wilson": [
+          68.2,
+          77.2
+        ]
+      },
+      "SIN SEÑAL": {
+        "n": 5291,
+        "pct_del_total": 83.5
+      }
+    }
+  },
+  "estado_alertas": "Candidato de grupo: cumple O3 en los 181 productos; en el alcance es EXPERIMENTAL, requiere revision humana",
+  "alertas_mes": {
+    "SIN SEÑAL": 159,
+    "ALZA PROBABLE": 14,
+    "BAJA PROBABLE": 8
+  },
+  "mes_origen": "2024-12",
+  "mes_objetivo": "2025-01"
+}

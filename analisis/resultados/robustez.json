@@ -1,0 +1,64 @@
+{
+ "por_anio": {
+  "2022": {
+   "ok_rf": 0.612,
+   "ok_mom": 0.587,
+   "ok_maj": 0.597
+  },
+  "2023": {
+   "ok_rf": 0.569,
+   "ok_mom": 0.543,
+   "ok_maj": 0.486
+  },
+  "2024": {
+   "ok_rf": 0.587,
+   "ok_mom": 0.545,
+   "ok_maj": 0.527
+  }
+ },
+ "ic_rf_menos_momentum": [
+  0.014,
+  0.049
+ ],
+ "ic_rf_menos_siempre_sube": [
+  0.032,
+  0.074
+ ],
+ "p_gt0_mom": 1.0,
+ "p_gt0_maj": 1.0,
+ "meses_gt50": 34,
+ "calibracion": [
+  {
+   "banda": "<=0.40 (baja prob.)",
+   "n": 803,
+   "prop_sube_real": 0.365,
+   "cobertura": 0.123
+  },
+  {
+   "banda": "0.40-0.50",
+   "n": 1312,
+   "prop_sube_real": 0.452,
+   "cobertura": 0.201
+  },
+  {
+   "banda": "0.50-0.60",
+   "n": 1617,
+   "prop_sube_real": 0.536,
+   "cobertura": 0.248
+  },
+  {
+   "banda": ">0.60 (alza probable)",
+   "n": 2787,
+   "prop_sube_real": 0.626,
+   "cobertura": 0.428
+  }
+ ],
+ "hi": {
+  "n": 2787,
+  "acierto": 0.626
+ },
+ "lo": {
+  "n": 803,
+  "acierto": 0.635
+ }
+}

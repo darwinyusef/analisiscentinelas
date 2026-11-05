@@ -1,0 +1,35 @@
+# Entorno y basura de sistema
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+
+# Secretos (la FAL_KEY va solo como variable de entorno)
+.env
+.env.*
+*.key
+
+# Datos crudos y paquetes pesados
+*.xlsx
+*.zip
+cache/
+*.pkl
+
+# Datos intermedios grandes (se regeneran con src/ y analisis/)
+datos_limpios/sipsa_limpio.csv
+datos_limpios/features_grupo.csv
+datos_limpios/produccion_limpia.csv
+analisis/resultados/maestra_completa.csv
+analisis/resultados/vista_maestra.csv
+analisis/resultados/predicciones_walkforward.csv
+
+# Borradores, logs y vistas previas
+entregables/*anterior*
+entregables/informe_eda.ipynb
+diseno/run.log
+diseno/preview.png
+diseno/moviles/
+salidas/preview_*.png
+salidas/pitch/*
+!salidas/pitch/app_*.png

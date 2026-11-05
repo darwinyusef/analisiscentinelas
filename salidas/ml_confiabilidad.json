@@ -1,0 +1,82 @@
+{
+  "homogeneidad_alcance_vs_resto": {
+    "dif_alcance_ampliado": 5.7,
+    "dif_resto": 4.6,
+    "diferencia": 1.2,
+    "ic95": [
+      -7.9,
+      10.5
+    ],
+    "lectura": "IC incluye 0: sin evidencia de que el alcance se comporte distinto al grupo (no prueba que sea igual)"
+  },
+  "auc": {
+    "foco": {
+      "auc": 0.637,
+      "ic95": [
+        0.554,
+        0.721
+      ],
+      "n": 140,
+      "mayor_que_azar": true
+    },
+    "ampliado": {
+      "auc": 0.638,
+      "ic95": [
+        0.565,
+        0.715
+      ],
+      "n": 210,
+      "mayor_que_azar": true
+    },
+    "todos": {
+      "auc": 0.633,
+      "ic95": [
+        0.619,
+        0.645
+      ],
+      "n": 6335,
+      "mayor_que_azar": true
+    }
+  },
+  "anios_con_dif_positiva": {
+    "ampliado": "2 de 3",
+    "foco": "2 de 3",
+    "todos": "3 de 3"
+  },
+  "potencia": {
+    "foco": {
+      "meses_de_prueba": 35,
+      "se_dif": 4.44,
+      "dif_observada": 4.3,
+      "efecto_minimo_detectable_80": 12.4,
+      "efecto_del_grupo": 4.6,
+      "meses_de_prueba_para_detectar_efecto_del_grupo": 257
+    },
+    "ampliado": {
+      "meses_de_prueba": 35,
+      "se_dif": 4.65,
+      "dif_observada": 5.7,
+      "efecto_minimo_detectable_80": 13.0,
+      "efecto_del_grupo": 4.6,
+      "meses_de_prueba_para_detectar_efecto_del_grupo": 282
+    }
+  },
+  "bandas_alcance_ampliado": {
+    "ALZA PROBABLE": {
+      "n": 11,
+      "acierto_pct": 72.7,
+      "wilson": [
+        43.4,
+        90.3
+      ]
+    },
+    "BAJA PROBABLE": {
+      "n": 18,
+      "acierto_pct": 77.8,
+      "wilson": [
+        54.8,
+        91.0
+      ]
+    }
+  }
+}

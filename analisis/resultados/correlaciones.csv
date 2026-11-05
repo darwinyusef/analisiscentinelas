@@ -1,0 +1,33 @@
+variable,rezago_meses,producto,rho
+lluvia,0,Papa capira,0.17001753360607835
+lluvia,0,Tomate chonto,0.19754529514903568
+lluvia,0,Cebolla junca,-0.03126826417299825
+lluvia,0,Todos (181 prod.),0.05588265745601564
+dolar,0,Papa capira,0.20146113383985975
+dolar,0,Tomate chonto,-0.005260081823495033
+dolar,0,Cebolla junca,-0.08895382817066043
+dolar,0,Todos (181 prod.),0.04943854580881568
+lluvia,1,Papa capira,0.1006428988895383
+lluvia,1,Tomate chonto,-0.12811221507890125
+lluvia,1,Cebolla junca,0.2214494447691409
+lluvia,1,Todos (181 prod.),0.05562671827601622
+dolar,1,Papa capira,0.08369989848964904
+dolar,1,Tomate chonto,-0.1887169706850411
+dolar,1,Cebolla junca,-0.06665846381002184
+dolar,1,Todos (181 prod.),0.039806690446455045
+lluvia,2,Papa capira,0.04155772247685256
+lluvia,2,Tomate chonto,0.16054015811006186
+lluvia,2,Cebolla junca,-0.0714571349472454
+lluvia,2,Todos (181 prod.),0.07250795180952936
+dolar,2,Papa capira,0.014065335753176046
+dolar,2,Tomate chonto,-0.07311381903033447
+dolar,2,Cebolla junca,0.1187451387088411
+dolar,2,Todos (181 prod.),0.057667403302208965
+lluvia,3,Papa capira,-0.026380606689136638
+lluvia,3,Tomate chonto,-0.28662172673061964
+lluvia,3,Cebolla junca,0.19704433497536947
+lluvia,3,Todos (181 prod.),0.06412505566832663
+dolar,3,Papa capira,0.03978127136021874
+dolar,3,Tomate chonto,0.05748462064251539
+dolar,3,Cebolla junca,0.2978810663021189
+dolar,3,Todos (181 prod.),0.02991059576699949

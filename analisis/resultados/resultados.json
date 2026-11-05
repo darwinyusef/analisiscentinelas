@@ -1,0 +1,404 @@
+{
+ "n_productos_modelo": 181,
+ "filas_maestra": 10863,
+ "produccion_antioquia_t": {
+  "papa": {
+   "2019": 209083.25,
+   "2020": 236553.85,
+   "2021": 167343.88999999998,
+   "2022": 156410.27,
+   "2023": 173710.33000000002,
+   "2024": 226517.61
+  },
+  "tomate chonto": {
+   "2019": 24663.2,
+   "2020": 25411.88,
+   "2021": 24109.850000000002,
+   "2022": 20795.28,
+   "2023": 20591.6,
+   "2024": 21963.36
+  },
+  "cebolla junca": {
+   "2019": 23860.1,
+   "2020": 23311.0,
+   "2021": 23096.0,
+   "2022": 23303.15,
+   "2023": 20395.550000000003,
+   "2024": 17079.559999999998
+  }
+ },
+ "estacionalidad": {
+  "Papa capira": {
+   "R2_solo_tendencia_anual": 0.592,
+   "R2_con_mes": 0.685,
+   "mes_mas_caro": 3,
+   "indice_max": 1.187,
+   "mes_mas_barato": 9,
+   "indice_min": 0.81,
+   "precio_medio": 2063,
+   "cv": 0.397,
+   "var_2020_2024": 1.064,
+   "_idx": {
+    "1": 1.05,
+    "2": 1.103,
+    "3": 1.187,
+    "4": 1.114,
+    "5": 1.15,
+    "6": 0.979,
+    "7": 0.9,
+    "8": 0.838,
+    "9": 0.81,
+    "10": 0.868,
+    "11": 0.936,
+    "12": 1.064
+   }
+  },
+  "Tomate chonto": {
+   "R2_solo_tendencia_anual": 0.331,
+   "R2_con_mes": 0.557,
+   "mes_mas_caro": 12,
+   "indice_max": 1.27,
+   "mes_mas_barato": 7,
+   "indice_min": 0.752,
+   "precio_medio": 2538,
+   "cv": 0.315,
+   "var_2020_2024": 0.513,
+   "_idx": {
+    "1": 1.203,
+    "2": 1.148,
+    "3": 1.03,
+    "4": 1.022,
+    "5": 0.969,
+    "6": 0.853,
+    "7": 0.752,
+    "8": 0.913,
+    "9": 0.901,
+    "10": 0.928,
+    "11": 1.011,
+    "12": 1.27
+   }
+  },
+  "Cebolla junca": {
+   "R2_solo_tendencia_anual": 0.428,
+   "R2_con_mes": 0.62,
+   "mes_mas_caro": 12,
+   "indice_max": 1.207,
+   "mes_mas_barato": 5,
+   "indice_min": 0.845,
+   "precio_medio": 2248,
+   "cv": 0.248,
+   "var_2020_2024": 0.501,
+   "_idx": {
+    "1": 1.158,
+    "2": 1.117,
+    "3": 0.97,
+    "4": 0.914,
+    "5": 0.845,
+    "6": 0.889,
+    "7": 0.985,
+    "8": 0.963,
+    "9": 0.932,
+    "10": 0.943,
+    "11": 1.077,
+    "12": 1.207
+   }
+  }
+ },
+ "balance_clase_sube": 0.541,
+ "empates_0": 0.0229,
+ "correlaciones": [
+  {
+   "variable": "dolar",
+   "rezago_meses": 0,
+   "Cebolla junca": -0.089,
+   "Papa capira": 0.201,
+   "Todos (181 prod.)": 0.049,
+   "Tomate chonto": -0.005
+  },
+  {
+   "variable": "dolar",
+   "rezago_meses": 1,
+   "Cebolla junca": -0.067,
+   "Papa capira": 0.084,
+   "Todos (181 prod.)": 0.04,
+   "Tomate chonto": -0.189
+  },
+  {
+   "variable": "dolar",
+   "rezago_meses": 2,
+   "Cebolla junca": 0.119,
+   "Papa capira": 0.014,
+   "Todos (181 prod.)": 0.058,
+   "Tomate chonto": -0.073
+  },
+  {
+   "variable": "dolar",
+   "rezago_meses": 3,
+   "Cebolla junca": 0.298,
+   "Papa capira": 0.04,
+   "Todos (181 prod.)": 0.03,
+   "Tomate chonto": 0.057
+  },
+  {
+   "variable": "lluvia",
+   "rezago_meses": 0,
+   "Cebolla junca": -0.031,
+   "Papa capira": 0.17,
+   "Todos (181 prod.)": 0.056,
+   "Tomate chonto": 0.198
+  },
+  {
+   "variable": "lluvia",
+   "rezago_meses": 1,
+   "Cebolla junca": 0.221,
+   "Papa capira": 0.101,
+   "Todos (181 prod.)": 0.056,
+   "Tomate chonto": -0.128
+  },
+  {
+   "variable": "lluvia",
+   "rezago_meses": 2,
+   "Cebolla junca": -0.071,
+   "Papa capira": 0.042,
+   "Todos (181 prod.)": 0.073,
+   "Tomate chonto": 0.161
+  },
+  {
+   "variable": "lluvia",
+   "rezago_meses": 3,
+   "Cebolla junca": 0.197,
+   "Papa capira": -0.026,
+   "Todos (181 prod.)": 0.064,
+   "Tomate chonto": -0.287
+  }
+ ],
+ "correlacion_nivel": {
+  "Papa capira": {
+   "rho_precio_trm": 0.499,
+   "rho_precio_lluvia": 0.04
+  },
+  "Tomate chonto": {
+   "rho_precio_trm": 0.197,
+   "rho_precio_lluvia": -0.169
+  },
+  "Cebolla junca": {
+   "rho_precio_trm": 0.622,
+   "rho_precio_lluvia": -0.274
+  }
+ },
+ "modelos_promedio_2022_24": [
+  {
+   "modelo": "RF Solo precio+estacionalidad",
+   "accuracy": 0.582,
+   "balanced_acc": 0.573,
+   "f1": 0.655,
+   "auc": 0.604
+  },
+  {
+   "modelo": "RF + clima",
+   "accuracy": 0.578,
+   "balanced_acc": 0.562,
+   "f1": 0.64,
+   "auc": 0.603
+  },
+  {
+   "modelo": "RF + dólar",
+   "accuracy": 0.582,
+   "balanced_acc": 0.567,
+   "f1": 0.656,
+   "auc": 0.603
+  },
+  {
+   "modelo": "RF Todo (precio+clima+dólar)",
+   "accuracy": 0.578,
+   "balanced_acc": 0.559,
+   "f1": 0.646,
+   "auc": 0.602
+  },
+  {
+   "modelo": "Regresión logística (todo)",
+   "accuracy": 0.565,
+   "balanced_acc": 0.537,
+   "f1": 0.637,
+   "auc": 0.57
+  },
+  {
+   "modelo": "Base: \"sube si subió el mes pasado\"",
+   "accuracy": 0.558,
+   "balanced_acc": 0.553,
+   "f1": 0.585,
+   "auc": 0.553
+  },
+  {
+   "modelo": "Base: clase mayoritaria",
+   "accuracy": 0.537,
+   "balanced_acc": 0.5,
+   "f1": 0.697,
+   "auc": 0.5
+  }
+ ],
+ "modelos_2024": [
+  {
+   "modelo": "Base: \"sube si subió el mes pasado\"",
+   "accuracy": 0.545,
+   "balanced_acc": 0.544,
+   "f1": 0.562,
+   "auc": 0.544,
+   "n": 2172
+  },
+  {
+   "modelo": "Base: clase mayoritaria",
+   "accuracy": 0.527,
+   "balanced_acc": 0.5,
+   "f1": 0.69,
+   "auc": 0.5,
+   "n": 2172
+  },
+  {
+   "modelo": "RF Solo precio+estacionalidad",
+   "accuracy": 0.578,
+   "balanced_acc": 0.569,
+   "f1": 0.646,
+   "auc": 0.599,
+   "n": 2172
+  },
+  {
+   "modelo": "RF + clima",
+   "accuracy": 0.556,
+   "balanced_acc": 0.552,
+   "f1": 0.592,
+   "auc": 0.595,
+   "n": 2172
+  },
+  {
+   "modelo": "RF + dólar",
+   "accuracy": 0.576,
+   "balanced_acc": 0.566,
+   "f1": 0.647,
+   "auc": 0.602,
+   "n": 2172
+  },
+  {
+   "modelo": "RF Todo (precio+clima+dólar)",
+   "accuracy": 0.564,
+   "balanced_acc": 0.559,
+   "f1": 0.616,
+   "auc": 0.6,
+   "n": 2172
+  },
+  {
+   "modelo": "Regresión logística (todo)",
+   "accuracy": 0.553,
+   "balanced_acc": 0.552,
+   "f1": 0.576,
+   "auc": 0.581,
+   "n": 2172
+  }
+ ],
+ "importancia_familias_2024": {
+  "Historia del precio": 0.653,
+  "Estacionalidad": 0.041,
+  "Clima": 0.176,
+  "Dólar": 0.069,
+  "Grupo de producto": 0.061
+ },
+ "clave_2022_24": {
+  "Papa capira": {
+   "n": 36,
+   "acc_modelo": 0.583,
+   "acc_base_momentum": 0.806,
+   "acc_mayoritaria": 0.611,
+   "auc": 0.662,
+   "prop_sube": 0.389
+  },
+  "Tomate chonto": {
+   "n": 36,
+   "acc_modelo": 0.472,
+   "acc_base_momentum": 0.389,
+   "acc_mayoritaria": 0.556,
+   "auc": 0.438,
+   "prop_sube": 0.556
+  },
+  "Cebolla junca": {
+   "n": 36,
+   "acc_modelo": 0.556,
+   "acc_base_momentum": 0.444,
+   "acc_mayoritaria": 0.556,
+   "auc": 0.578,
+   "prop_sube": 0.556
+  }
+ },
+ "clave_2024": {
+  "Papa capira": {
+   "n": 12,
+   "acc_modelo": 0.667,
+   "acc_base": 0.833
+  },
+  "Tomate chonto": {
+   "n": 12,
+   "acc_modelo": 0.333,
+   "acc_base": 0.167
+  },
+  "Cebolla junca": {
+   "n": 12,
+   "acc_modelo": 0.5,
+   "acc_base": 0.5
+  }
+ },
+ "regresion_2024": [
+  {
+   "anio": 2024,
+   "grupo": "Todos",
+   "MAPE_naive": 0.0997,
+   "MAPE_RF": 0.0984,
+   "MAE_naive": 645.0322,
+   "MAE_RF": 740.2658
+  },
+  {
+   "anio": 2024,
+   "grupo": "Papa capira",
+   "MAPE_naive": 0.0849,
+   "MAPE_RF": 0.1016,
+   "MAE_naive": 244.25,
+   "MAE_RF": 279.3947
+  },
+  {
+   "anio": 2024,
+   "grupo": "Tomate chonto",
+   "MAPE_naive": 0.2089,
+   "MAPE_RF": 0.2536,
+   "MAE_naive": 530.0833,
+   "MAE_RF": 621.9848
+  },
+  {
+   "anio": 2024,
+   "grupo": "Cebolla junca",
+   "MAPE_naive": 0.1013,
+   "MAPE_RF": 0.1008,
+   "MAE_naive": 266.8333,
+   "MAE_RF": 264.2383
+  }
+ ],
+ "regresion_prom": [
+  {
+   "grupo": "Cebolla junca",
+   "MAPE_naive": 0.1156,
+   "MAPE_RF": 0.1247
+  },
+  {
+   "grupo": "Papa capira",
+   "MAPE_naive": 0.1334,
+   "MAPE_RF": 0.1589
+  },
+  {
+   "grupo": "Todos",
+   "MAPE_naive": 0.5511,
+   "MAPE_RF": 0.5377
+  },
+  {
+   "grupo": "Tomate chonto",
+   "MAPE_naive": 0.2052,
+   "MAPE_RF": 0.228
+  }
+ ]
+}

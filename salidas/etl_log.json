@@ -1,0 +1,51 @@
+{
+  "sipsa_filas_crudas": 271746,
+  "sipsa_filas_encabezado_o_vacias": 6,
+  "qa_fechas": {
+    "meses_distintos_lectura_ingenua": 11,
+    "filas_fecha_texto_no_parseada": 49265,
+    "filas_parseadas_como_2026": 107719,
+    "filas_2020_21_con_dia_como_mes": 110244,
+    "meses_distintos_corregidos": 60
+  },
+  "precios_escalados_x1000": 154433,
+  "precios_2022_24_sin_escalar": 7063,
+  "sipsa_combinaciones_repetidas": 8,
+  "sipsa_filas_limpias": 271740,
+  "sipsa_meses": 60,
+  "sipsa_productos": 360,
+  "sipsa_mercados": 88,
+  "cma_filas": 12534,
+  "cma_productos": 220,
+  "clima_filas_crudas": 7440,
+  "clima_filas_mensuales": 180,
+  "trm_filas_crudas": 8367,
+  "trm_dias_expandidos": 1858,
+  "produccion_filas_crudas": 37882,
+  "produccion_duplicados_exactos": 7,
+  "produccion_area_negativa": 1,
+  "pesos_clima_por_rubro": {
+    "cebolla junca": {
+      "norte": 0.028,
+      "occidente": 0.745,
+      "oriente": 0.226
+    },
+    "papa": {
+      "norte": 0.541,
+      "occidente": 0.001,
+      "oriente": 0.458
+    },
+    "papa criolla": {
+      "norte": 0.234,
+      "occidente": 0.0,
+      "oriente": 0.766
+    },
+    "tomate chonto": {
+      "norte": 0.073,
+      "occidente": 0.088,
+      "oriente": 0.839
+    }
+  },
+  "maestra_filas": 240,
+  "maestra_nulos": {}
+}

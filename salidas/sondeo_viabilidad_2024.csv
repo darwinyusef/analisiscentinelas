@@ -1,0 +1,13 @@
+escenario,metodo,n,accuracy_%,ic95_bajo,ic95_alto
+A. 4 productos · precio+TRM,Base: clase mayoritaria,48,50.0,36.38909893203777,63.61090106796223
+A. 4 productos · precio+TRM,Base: repite última dirección,48,54.166666666666664,40.29083309494732,67.42497814544647
+A. 4 productos · precio+TRM,Regresión logística,48,54.166666666666664,40.29083309494732,67.42497814544647
+A. 4 productos · precio+TRM,Random Forest,48,62.5,48.36250612524957,74.78492759593188
+B. Todos los productos CMA · precio+TRM,Base: clase mayoritaria,48,50.0,36.38909893203777,63.61090106796223
+B. Todos los productos CMA · precio+TRM,Base: repite última dirección,48,54.166666666666664,40.29083309494732,67.42497814544647
+B. Todos los productos CMA · precio+TRM,Regresión logística,48,62.5,48.36250612524957,74.78492759593188
+B. Todos los productos CMA · precio+TRM,Random Forest,48,52.083333333333336,38.328995635984384,65.52890998421255
+C. 4 productos · +clima+producción,Base: clase mayoritaria,48,50.0,36.38909893203777,63.61090106796223
+C. 4 productos · +clima+producción,Base: repite última dirección,48,54.166666666666664,40.29083309494732,67.42497814544647
+C. 4 productos · +clima+producción,Regresión logística,48,50.0,36.38909893203777,63.61090106796223
+C. 4 productos · +clima+producción,Random Forest,48,56.25,42.27477150100165,69.29894535958907
